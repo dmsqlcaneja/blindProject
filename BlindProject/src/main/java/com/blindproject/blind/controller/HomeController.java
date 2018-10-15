@@ -21,8 +21,6 @@ public class HomeController {
 	@GetMapping("index")
 	public String index(Model model) {
 		
-		
-		
 		return "home.index";
 	}
 	
