@@ -15,7 +15,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @Configuration
 @ComponentScan(basePackages= {"com.blindproject.blind.dao.mybatis", "com.blindproject.blind.service"})
 public class ServiceContextConfig {
-	
+	 
 	@Bean
 	public BasicDataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
