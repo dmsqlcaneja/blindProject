@@ -24,4 +24,15 @@ public class ApplyController {
 		return "apply.MilitaryService";
 	}
 	
+	@RequestMapping("CareerService")
+	public String careerservice() {
+
+		return "apply.CareerService";
+	}
+	
+	@RequestMapping("Introduction")
+	public String Introduction() {
+
+		return "apply.Introduction";
+	}
 }
