@@ -15,16 +15,16 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @Configuration
 @ComponentScan(basePackages= {"com.blindproject.blind.dao.mybatis", "com.blindproject.blind.service"})
 public class ServiceContextConfig {
-	
+	 
 	@Bean
 	public BasicDataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		
 		/* Mysql or mariaDB*/
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/Blind_DB?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8");
-		dataSource.setUsername("root");
-		dataSource.setPassword("Dmsqlc79**");
+		dataSource.setUrl("jdbc:mysql://192.168.0.106:3306/Blind_DB?serverTimezone=UTC");
+		dataSource.setUsername("blindadmin");
+		dataSource.setPassword("Admin2130!!");
 		
 		
 		/* PULL 관리*/

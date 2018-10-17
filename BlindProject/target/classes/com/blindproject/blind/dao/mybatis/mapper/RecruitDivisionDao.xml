@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blindproject.blind.dao.RecruitDivisionDao">
+	
+	<select id="get" resultType="com.blindproject.blind.entity.RecruitDivision">
+		select * from Recruit_Division as RecruitDivision
+		where id = #{param1}
+	</select>
+	
+</mapper>
