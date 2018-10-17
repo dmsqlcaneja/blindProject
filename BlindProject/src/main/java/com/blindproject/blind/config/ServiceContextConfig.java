@@ -22,9 +22,9 @@ public class ServiceContextConfig {
 		
 		/* Mysql or mariaDB*/
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://192.168.0.106:3306/Blind_DB?serverTimezone=UTC");
-		dataSource.setUsername("blindadmin");
-		dataSource.setPassword("Admin2130!!");
+		dataSource.setUrl("jdbc:mysql://211.238.142.33:3306/Blind_DB?serverTimezone=UTC");
+		dataSource.setUsername("blind");
+		dataSource.setPassword("0000");
 		
 		
 		/* PULL 관리*/

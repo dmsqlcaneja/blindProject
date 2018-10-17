@@ -9,7 +9,6 @@
 
 	<div>
 		<a href="">개인사항</a> 
-		<a href="">학력사항</a>
 	  	<a href="">병역사항</a>
 		<a href="">자기소개</a>
 		<a href="">작성완료</a>

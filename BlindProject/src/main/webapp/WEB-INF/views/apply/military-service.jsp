@@ -6,14 +6,26 @@
 <dt class="data01"><img src="/img/job_apply/dt_01.gif" alt="접수 상태"></dt>
 	<dd class="data01">지원서 저장 전입니다.</dd>
 	<dt class="data02"><img src="/img/job_apply/dt_02.gif" alt="원서 마감 일시"></dt>
-	<dd class="data02">2018-12-31 23:59 <span class="data021">(D-76일 11:19:51)</span></dd>
+	
+	<dd class="data02">2018-12-31 23:59 
+	<span class="data021">(D-76일 11:19:51)</span>
+	</dd>
+	
 	<dt class="data03"><img src="/img/job_apply/dt_03_out.gif" alt="자동 로그아웃"></dt>
 	<dd class="data03">0:59:9</dd>
 	<dd class="data031"><a href="#none" onclick="javascript:doExtension();" title="연장"><img src="/img/job_apply/s_increase.gif"></a></dd>
 </dl>
 
+<div>
+		<a href="">개인사항</a> 
+	  	<a href="">병역사항</a>
+		<a href="">자기소개</a>
+		<a href="">작성완료</a>
+	</div>
+
 <h3>병역정보</h3>
-<div>	
+<div>
+<form>
 	<table>
 		<thead>
 			<tr>
@@ -24,7 +36,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<td><select>
+			<td><selectz>
 					<option value="">선택</option>
 					<option value="A">만기제대</option>
 					<option value="C">방위소집해제</option>
@@ -210,5 +222,6 @@
 			</select></td>
 		</tbody>
 	</table>
+</form>
 </div>
 </main>
