@@ -18,10 +18,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MemberController {
 	
 	
-	@GetMapping("main")
+	@GetMapping("notice1")
 	public String home(Model model) {
 		
-		return "member.main";
+		return "member.notice1";
+	}	
+	
+	@GetMapping("notice2")
+	public String home1(Model model) {
+		
+		return "member.notice2";
 	}
+	
+	@GetMapping("notice3")
+	public String home2(Model model) {
+		
+		return "member.notice3";
+	}	
 	
 }
