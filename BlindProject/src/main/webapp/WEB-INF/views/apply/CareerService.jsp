@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <main>
-<form method="post">
+<form action = "CareerService" method="post">
 					<h3>회사 경력</h3>
 					
 					<!-- input type1 start -->
@@ -88,3 +88,6 @@
 					
 				</form>
 </main>
+<script>
+
+</script>
