@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
 
 <main>
+<div>
+		<a href="">개인사항</a> 
+	  	<a href="">병역사항</a>
+		<a href="">자기소개</a>
+		<a href="">작성완료</a>
+	</div>
+	
 <form action = "CareerService" method="post">
 					<h3>회사 경력</h3>
 					
@@ -20,27 +27,27 @@
 							</tr>
 						</thead>
 			<tbody>
-				<tr>
+				<tr name="trStaff">
 					<td>
-					<select><option value="">연도</option></select>
-					 <select><option value="">월</option></select>
+					<p> 날짜: <input type="text" class="datepicker" size="20" ></p>
+
 					 <span class="label">~</span>
 					
-					<select><option value="">연도</option></select>
-					 <select><option value="">월</option></select>
+					<p>날짜: <input type="text" class="datepicker"></p>
 					 </td>
 					 
-					<td><input type="text" style="width: 68px;"/></td>
-					<td><input type="text" style="width: 68px;" /></td>
-					<td><input type="text" style="width: 82px;" /></td>
-					<td><input type="text" style="width: 68px;"></td>
-					<td><input type="text" style="width: 176px;" /></td>
+					<td><input type="text"  name="staff_name" style="width: 68px;"/></td>
+					<td><input type="text" name="staff_contact" style="width: 68px;" /></td>
+					<td><input type="text" name="staff_contact2" style="width: 82px;" /></td>
+					<td><input type="text" name="staff_email" style="width: 68px;"></td>
+					<td><input type="text" name="staff_Reason" style="width: 176px;" /></td>
 					<td><a href = "">삭제</a></td>
 				</tr>
 
 				<tr>
 					<td class="add" colspan="7">항목 추가 시 추가 버튼을 눌러주시기 바랍니다. 
-					<em>(최대 4개까지 가능)</em> <a href="">추가</a>
+					<em>(최대 4개까지 가능)</em>
+				<button name="addStaff">축</button>
 					</td>
 				</tr>
 			</tbody>
@@ -88,6 +95,27 @@
 					
 				</form>
 </main>
-<script>
 
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Display month &amp; year menus</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+			$(function() {
+				$( ".datepicker" ).datepicker( {
+					dateFormat:"yy/mm/dd",
+					changeMonth: true,
+				     changeYear: true
+				});
+			});
+		             
+		      
+			
+			
+			
 </script>
+view-source:http://huskdoll.tistory.com/517
