@@ -4,7 +4,7 @@ import java.util.Date;
 
 //회사경력 
 public class CompanyCareer {
-
+  
  // 아이디 
  private Integer id;
 
