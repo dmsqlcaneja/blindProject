@@ -1,93 +1,105 @@
 package com.blindproject.blind.entity;
-
 //공지사항 
 public class Notice {
 
-	// 아이디
-	private Integer id;
+ // 아이디 
+ private Integer id;
 
-	// 제목
-	private String title;
+ // 제목 
+ private String title;
 
-	// 등록일
-	private String regDate;
+ // 등록일 
+ private String regDate;
 
-	// 전형아이디
-	private Integer typeId;
+ // 전형아이디 
+ private Integer typeId;
 
-	// 회사아이디
-	private Integer companyId;
+ // 회사아이디 
+ private Integer companyId;
 
-	// 채용구분
-	private Integer employDivision;
+ // 채용구분 
+ private Integer employDivision;
 
-	// 작성자
-	private Integer writer;
+ // 작성자 
+ private Integer writer;
 
-	public Integer getId() {
-		return id;
-	}
+ // 내용 
+ private String contents;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+ public Integer getId() {
+     return id;
+ }
 
-	public String getTitle() {
-		return title;
-	}
+ public void setId(Integer id) {
+     this.id = id;
+ }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+ public String getTitle() {
+     return title;
+ }
 
-	public String getRegDate() {
-		return regDate;
-	}
+ public void setTitle(String title) {
+     this.title = title;
+ }
 
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
-	}
+ public String getRegDate() {
+     return regDate;
+ }
 
-	public Integer getTypeId() {
-		return typeId;
-	}
+ public void setRegDate(String regDate) {
+     this.regDate = regDate;
+ }
 
-	public void setTypeId(Integer typeId) {
-		this.typeId = typeId;
-	}
+ public Integer getTypeId() {
+     return typeId;
+ }
 
-	public Integer getCompanyId() {
-		return companyId;
-	}
+ public void setTypeId(Integer typeId) {
+     this.typeId = typeId;
+ }
 
-	public void setCompanyId(Integer companyId) {
-		this.companyId = companyId;
-	}
+ public Integer getCompanyId() {
+     return companyId;
+ }
 
-	public Integer getEmployDivision() {
-		return employDivision;
-	}
+ public void setCompanyId(Integer companyId) {
+     this.companyId = companyId;
+ }
 
-	public void setEmployDivision(Integer employDivision) {
-		this.employDivision = employDivision;
-	}
+ public Integer getEmployDivision() {
+     return employDivision;
+ }
 
-	public Integer getWriter() {
-		return writer;
-	}
+ public void setEmployDivision(Integer employDivision) {
+     this.employDivision = employDivision;
+ }
 
-	public void setWriter(Integer writer) {
-		this.writer = writer;
-	}
+ public Integer getWriter() {
+     return writer;
+ }
 
-	// Notice 모델 복사
-	public void CopyData(Notice param) {
-		this.id = param.getId();
-		this.title = param.getTitle();
-		this.regDate = param.getRegDate();
-		this.typeId = param.getTypeId();
-		this.companyId = param.getCompanyId();
-		this.employDivision = param.getEmployDivision();
-		this.writer = param.getWriter();
-	}
+ public void setWriter(Integer writer) {
+     this.writer = writer;
+ }
+
+ public String getContents() {
+     return contents;
+ }
+
+ public void setContents(String contents) {
+     this.contents = contents;
+ }
+
+ // Notice 모델 복사
+ public void CopyData(Notice param)
+ {
+     this.id = param.getId();
+     this.title = param.getTitle();
+     this.regDate = param.getRegDate();
+     this.typeId = param.getTypeId();
+     this.companyId = param.getCompanyId();
+     this.employDivision = param.getEmployDivision();
+     this.writer = param.getWriter();
+     this.contents = param.getContents();
+ }
 }
