@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.blindproject.blind.entity.Career;
+import com.blindproject.blind.entity.CompanyCareer;
+import com.blindproject.blind.entity.Military;
 import com.mysql.cj.Session;
 
 
@@ -24,32 +27,53 @@ import com.mysql.cj.Session;
 @RequestMapping("/apply/")
 public class ApplyController {
 
-	@GetMapping("military-service")
-	public String home(Model model) {
-		
-		return "apply.military-service";
-	}
 	
-	@RequestMapping("career-service")
+	
+	//----------careerService------------------------------------------------------//
+	@GetMapping("career-service")
 	public String careerservice() {
-
 		return "apply.career-service";
 	}
+	
+	@PostMapping("career-service")
+	public String careerservice(HttpSession session, CompanyCareer companyCareer,
+			Career career) {
+		System.out.println(companyCareer.getClass());
+		//System.out.println(companyCareer.getPosition());
+		return "apply.career-service";
+	}
+	//-------------------------------------------------------------------------------
 	
 	@RequestMapping("introduction")
 	public String Introduction (Model model){
 
 		return "apply.introduction";
 	}
+
 	@RequestMapping("index")
 	public String Index (Model model){
 
 		return "apply.index";
 	}
 	
+	//----------military------------------------------------------------------//
+	@GetMapping("military")
+	public String military(HttpSession session, Military military) {
+//		List<discharge> discharges = 
+		
+		session.setAttribute("Military", military);
+		
+		
+		return "apply.military";
+	}
+	
+	
 	@PostMapping("military-service")
-	public String militaryservice(HttpSession session) {
+	public String militaryservice(HttpSession session, Military military) {
+		session.setAttribute("Military", military);
 //		session.setAttribute("A", );
 		return "";
 	}
+	//-------------------------------------------------------------------------------
+	
 }
