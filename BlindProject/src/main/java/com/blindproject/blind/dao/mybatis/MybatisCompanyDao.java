@@ -1,5 +1,7 @@
 package com.blindproject.blind.dao.mybatis;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,6 +21,14 @@ public class MybatisCompanyDao implements CompanyDao {
 		CompanyDao companyDao = sqlSession.getMapper(CompanyDao.class);
 		
 		return companyDao.get(id);
+	}
+
+	@Override
+	public List<Company> getList() {
+		
+		CompanyDao companyDao = sqlSession.getMapper(CompanyDao.class);
+		
+		return companyDao.getList();
 	}
 
 }

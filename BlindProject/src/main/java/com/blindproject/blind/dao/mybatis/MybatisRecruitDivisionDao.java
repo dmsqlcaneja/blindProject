@@ -1,5 +1,7 @@
 package com.blindproject.blind.dao.mybatis;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,6 +22,14 @@ public class MybatisRecruitDivisionDao implements RecruitDivisionDao {
 
 		return recruitDivisionDao.get(id);
 
+	}
+
+	@Override
+	public List<RecruitDivision> getList() {
+
+		RecruitDivisionDao recruitDivisionDao = sqlSession.getMapper(RecruitDivisionDao.class);
+
+		return recruitDivisionDao.getList();
 	}
 
 }

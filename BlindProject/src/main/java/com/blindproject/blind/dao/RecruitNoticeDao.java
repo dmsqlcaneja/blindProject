@@ -6,6 +6,12 @@ import com.blindproject.blind.entity.RecruitNotice;
 
 public interface RecruitNoticeDao {
 	
+	int insert(RecruitNotice recruitNotice);
+
+	int update(RecruitNotice recruitNotice);
+	
+	int delete(Integer id);
+	
 	RecruitNotice get(Integer id);
 	
 	List<RecruitNotice> getList();

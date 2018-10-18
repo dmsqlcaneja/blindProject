@@ -20,6 +20,12 @@ public class RecruitNotice {
 	// 작성자
 	private Integer writer;
 
+	// 모집시작일
+	private Date strDate;
+
+	// 모집종료일
+	private Date endDate;
+
 	public Integer getId() {
 		return id;
 	}
@@ -60,6 +66,22 @@ public class RecruitNotice {
 		this.writer = writer;
 	}
 
+	public Date getStrDate() {
+		return strDate;
+	}
+
+	public void setStrDate(Date strDate) {
+		this.strDate = strDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
 	// RecruitNotice 모델 복사
 	public void CopyData(RecruitNotice param) {
 		this.id = param.getId();
@@ -67,19 +89,24 @@ public class RecruitNotice {
 		this.contents = param.getContents();
 		this.regDate = param.getRegDate();
 		this.writer = param.getWriter();
+		this.strDate = param.getStrDate();
+		this.endDate = param.getEndDate();
 	}
 
 	public RecruitNotice() {
 		super();
 	}
 
-	public RecruitNotice(Integer id, String title, String contents, Date regDate, Integer writer) {
+	public RecruitNotice(Integer id, String title, String contents, Date regDate, Integer writer, Date strDate,
+			Date endDate) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.contents = contents;
 		this.regDate = regDate;
 		this.writer = writer;
+		this.strDate = strDate;
+		this.endDate = endDate;
 	}
 	
 }

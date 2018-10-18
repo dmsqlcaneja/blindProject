@@ -1,7 +1,7 @@
 package com.blindproject.blind.entity;
 
 //신세계 직원 
-public class SinEmployee {
+public class Employee {
 
 	// 사원번호
 	private Integer id;
@@ -81,7 +81,7 @@ public class SinEmployee {
 	}
 
 	// SinEmployee 모델 복사
-	public void CopyData(SinEmployee param) {
+	public void CopyData(Employee param) {
 		this.id = param.getId();
 		this.companyId = param.getCompanyId();
 		this.loginId = param.getLoginId();
@@ -91,11 +91,11 @@ public class SinEmployee {
 		this.name = param.getName();
 	}
 
-	public SinEmployee() {
+	public Employee() {
 		super();
 	}
 
-	public SinEmployee(Integer id, Integer companyId, String loginId, String pwd, String email, String phonNumber,
+	public Employee(Integer id, Integer companyId, String loginId, String pwd, String email, String phonNumber,
 			String name) {
 		super();
 		this.id = id;

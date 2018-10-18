@@ -5,68 +5,108 @@ import java.util.Date;
 //병역사항 
 public class MilitaryService {
 
- // 아이디 
- private Integer id;
+// 아이디 
+	private Integer id;
 
- // 복무기간 
- private Date servicePeriod;
+// 복무시작일 
+	private Date strPeriod;
 
- // 군별 
- private String militaryGroup;
+// 군별 
+	private String militaryGroup;
 
- // 계급 
- private String classes;
+// 계급 
+	private String classes;
 
- // 개인정보아이디 
- private Integer personalInfoId;
+// 개인정보아이디 
+	private Integer personalInfoId;
 
- public Integer getId() {
-     return id;
- }
+// 복무종료일 
+	private Date endPeriod;
 
- public void setId(Integer id) {
-     this.id = id;
- }
+// 제대구분 
+	private String group;
 
- public Date getServicePeriod() {
-     return servicePeriod;
- }
+	public Integer getId() {
+		return id;
+	}
 
- public void setServicePeriod(Date servicePeriod) {
-     this.servicePeriod = servicePeriod;
- }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
- public String getMilitaryGroup() {
-     return militaryGroup;
- }
+	public Date getStrPeriod() {
+		return strPeriod;
+	}
 
- public void setMilitaryGroup(String militaryGroup) {
-     this.militaryGroup = militaryGroup;
- }
+	public void setStrPeriod(Date strPeriod) {
+		this.strPeriod = strPeriod;
+	}
 
- public String getClasses() {
-     return classes;
- }
+	public String getMilitaryGroup() {
+		return militaryGroup;
+	}
 
- public void setClasses(String classes) {
-     this.classes = classes;
- }
+	public void setMilitaryGroup(String militaryGroup) {
+		this.militaryGroup = militaryGroup;
+	}
 
- public Integer getPersonalInfoId() {
-     return personalInfoId;
- }
+	public String getClasses() {
+		return classes;
+	}
 
- public void setPersonalInfoId(Integer personalInfoId) {
-     this.personalInfoId = personalInfoId;
- }
+	public void setClasses(String classes) {
+		this.classes = classes;
+	}
 
- // MilitaryService 모델 복사
- public void CopyData(MilitaryService param)
- {
-     this.id = param.getId();
-     this.servicePeriod = param.getServicePeriod();
-     this.militaryGroup = param.getMilitaryGroup();
-     this.classes = param.getClasses();
-     this.personalInfoId = param.getPersonalInfoId();
- }
+	public Integer getPersonalInfoId() {
+		return personalInfoId;
+	}
+
+	public void setPersonalInfoId(Integer personalInfoId) {
+		this.personalInfoId = personalInfoId;
+	}
+
+	public Date getEndPeriod() {
+		return endPeriod;
+	}
+
+	public void setEndPeriod(Date endPeriod) {
+		this.endPeriod = endPeriod;
+	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+// MilitaryService 모델 복사
+	public void CopyData(MilitaryService param) {
+		this.id = param.getId();
+		this.strPeriod = param.getStrPeriod();
+		this.militaryGroup = param.getMilitaryGroup();
+		this.classes = param.getClasses();
+		this.personalInfoId = param.getPersonalInfoId();
+		this.endPeriod = param.getEndPeriod();
+		this.group = param.getGroup();
+	}
+
+	public MilitaryService() {
+		super();
+	}
+
+	public MilitaryService(Integer id, Date strPeriod, String militaryGroup, String classes, Integer personalInfoId,
+			Date endPeriod, String group) {
+		super();
+		this.id = id;
+		this.strPeriod = strPeriod;
+		this.militaryGroup = militaryGroup;
+		this.classes = classes;
+		this.personalInfoId = personalInfoId;
+		this.endPeriod = endPeriod;
+		this.group = group;
+	}
+	
 }

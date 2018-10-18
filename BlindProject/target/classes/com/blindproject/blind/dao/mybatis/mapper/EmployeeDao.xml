@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blindproject.blind.dao.EmployeeDao">
+	
+	<insert id="insert" parameterType="com.blindproject.blind.entity.Employee">
+		insert into Employee(id, companyId, loginId, pwd, email, phonNumber, name)
+		values(#{id}, #{companyId}, #{loginId}, #{pwd}, #{email}, #{phonNumber}, #{name})
+	</insert>
+	
+	<select id="get" resultType="com.blindproject.blind.entity.Employee">
+		select * from Employee
+		where id = #{param1}
+	</select>
+	
+</mapper>

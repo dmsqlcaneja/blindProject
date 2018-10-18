@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.blindproject.blind.dao.CompanyDao;
-import com.blindproject.blind.dao.SinEmployeeDao;
+import com.blindproject.blind.dao.EmployeeDao;
 import com.blindproject.blind.entity.Company;
-import com.blindproject.blind.entity.SinEmployee;
+import com.blindproject.blind.entity.Employee;
 
 @Service
 public class MybatisEmployeeService {
@@ -15,7 +15,7 @@ public class MybatisEmployeeService {
 	private CompanyDao companyDao;
 	
 	@Autowired
-	private SinEmployeeDao sinEmployeeDao;
+	private EmployeeDao sinEmployeeDao;
 	
 	public Company getCompany(Integer id) {
 		
@@ -23,7 +23,7 @@ public class MybatisEmployeeService {
 	}
 	
 	//회원가입
-	public int insertEmployee(SinEmployee sinEmployee) {
+	public int insertEmployee(Employee sinEmployee) {
 		
 		int result = sinEmployeeDao.insert(sinEmployee);
 		
