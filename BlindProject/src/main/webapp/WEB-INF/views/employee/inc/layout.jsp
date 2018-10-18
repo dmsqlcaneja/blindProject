@@ -5,11 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1">
-<!-- content="width=device-width dp 단위 -->
-<link href="/resources/css/style.css" type="text/css" rel="stylesheet" />
-<script src="./resources/js/index.js"></script>
-<title>index</title>
+<title>채용 담당자 페이지</title>
 </head>
 <body>
 	<tiles:insertAttribute name="header" />

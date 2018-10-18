@@ -1,8 +1,14 @@
 package com.blindproject.blind.controller.employee;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.blindproject.blind.dao.CompanyDao;
 import com.blindproject.blind.dao.RecruitDivisionDao;
@@ -40,9 +47,9 @@ public class HomeController {
 	public String index(Model model) {
 		
 		//채용공고 가져오기
-		List<RecruitNotice> recruitNotice = recruitNoticeDao.getList();
+		List<RecruitNotice> recruitNoticeList = recruitNoticeDao.getList();
 		
-		model.addAttribute("recruitNoticeList", recruitNotice);
+		model.addAttribute("recruitNoticeList", recruitNoticeList);
 		
 		return "employee.index";
 	}
@@ -63,15 +70,51 @@ public class HomeController {
 		return "employee.hire";
 	}
 	
-//	@PostMapping("hire")
-//	public String hire() {
-//		
-//		return "<script>alert('등록 완료 되었습니다..');location.href='./index';</script>";
-//	}
+	@PostMapping("hire")
+	public String hire(HttpServletRequest request) throws ParseException {
+		
+		RecruitNotice recruitNotice = new RecruitNotice();
+		recruitNotice.setTitle(request.getParameter("title"));
+		recruitNotice.setContents(request.getParameter("contents"));
+		
+		Date strDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("strDate"));
+		Date endDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("endDate"));
+		recruitNotice.setStrDate(strDate);
+		recruitNotice.setEndDate(endDate);
+		
+		recruitNoticeDao.insertRecruitNotice(recruitNotice);
+		
+		return "employee.index";
+	}
 	
 	@GetMapping("detail")
-	public String detail() {
+	public String detail(Model model
+			, @RequestParam("id") Integer id) {
+
+		RecruitNotice notice = recruitNoticeDao.get(id);
+		
+		model.addAttribute("rnl", notice);
+		
 		return "employee.detail";
+	}
+	
+	@GetMapping("edit")
+	public String edit(Model model
+			, @RequestParam("id") Integer id) {
+		
+		RecruitNotice notice = recruitNoticeDao.get(id);
+		
+		model.addAttribute("rnl", notice);
+		
+		List<Company> company = companyDao.getList();
+		
+		model.addAttribute("companyList", company);
+
+		List<RecruitDivision> recruitDivision = recruitDivisionDao.getList();
+		
+		model.addAttribute("recruitDivisionList", recruitDivision);
+		
+		return "employee.edit";
 	}
 	
 	

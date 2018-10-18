@@ -26,6 +26,9 @@ public class RecruitNotice {
 	// 모집종료일
 	private Date endDate;
 
+	// 채용구분
+	private Integer employDivision;
+
 	public Integer getId() {
 		return id;
 	}
@@ -82,6 +85,14 @@ public class RecruitNotice {
 		this.endDate = endDate;
 	}
 
+	public Integer getEmployDivision() {
+		return employDivision;
+	}
+
+	public void setEmployDivision(Integer employDivision) {
+		this.employDivision = employDivision;
+	}
+
 	// RecruitNotice 모델 복사
 	public void CopyData(RecruitNotice param) {
 		this.id = param.getId();
@@ -91,6 +102,7 @@ public class RecruitNotice {
 		this.writer = param.getWriter();
 		this.strDate = param.getStrDate();
 		this.endDate = param.getEndDate();
+		this.employDivision = param.getEmployDivision();
 	}
 
 	public RecruitNotice() {
@@ -98,7 +110,7 @@ public class RecruitNotice {
 	}
 
 	public RecruitNotice(Integer id, String title, String contents, Date regDate, Integer writer, Date strDate,
-			Date endDate) {
+			Date endDate, Integer employDivision) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -107,6 +119,7 @@ public class RecruitNotice {
 		this.writer = writer;
 		this.strDate = strDate;
 		this.endDate = endDate;
+		this.employDivision = employDivision;
 	}
 	
 }
