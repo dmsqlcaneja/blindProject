@@ -2,38 +2,57 @@ package com.blindproject.blind.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.blindproject.blind.dao.RecruitDivisionDao;
+import com.blindproject.blind.dao.RecruitNoticeDao;
+import com.blindproject.blind.entity.RecruitDivision;
+import com.blindproject.blind.entity.RecruitNotice;
+
 
 @Controller
 @RequestMapping("/member/")
 public class MemberController {
+
+	@Autowired
+	private RecruitNoticeDao recruitNoticeDao;
 	
+	@Autowired
+	private RecruitDivisionDao recruitDivisionDao;
 	
-	@GetMapping("notice1")
+	@GetMapping("RecruitNotice")
 	public String home(Model model) {
 		
-		return "member.notice1";
+		List<RecruitNotice> recruitNotice = recruitNoticeDao.getList();		
+		model.addAttribute("recruitNoticeList", recruitNotice);			
+	
+		
+		List<RecruitDivision> recruitDivision = recruitDivisionDao.getList();		
+		model.addAttribute("recruitDivisionList", recruitDivision);			
+		
+		return "member.RecruitNotice";
 	}	
 	
-	@GetMapping("notice2")
+	@GetMapping("RegularRecruit")
 	public String home1(Model model) {
 		
-		return "member.notice2";
+		return "member.RegularRecruit";
 	}
 	
-	@GetMapping("notice3")
+	@GetMapping("Notice")
 	public String home2(Model model) {
 		
-		return "member.notice3";
+		return "member.Notice";
 	}	
 	
 }

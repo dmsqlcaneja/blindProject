@@ -26,6 +26,11 @@ public class RecruitNotice {
 	// 모집종료일
 	private Date endDate;
 
+	//채용 구분
+	private String employDivsionName;
+	
+	
+
 	public Integer getId() {
 		return id;
 	}
@@ -80,6 +85,14 @@ public class RecruitNotice {
 
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+	
+	public String getEmployDivsionName() {
+		return employDivsionName;
+	}
+
+	public void setEmployDivsionName(String employDivsionName) {
+		this.employDivsionName = employDivsionName;
 	}
 
 	// RecruitNotice 모델 복사

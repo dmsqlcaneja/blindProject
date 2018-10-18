@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <style>
 /* ---------------------------------------------------------------- */
@@ -83,20 +85,66 @@ ol, ul {
 .btn-prev {
 	width: 15px;
 	height: 15px;
-	background: url(../../wepapp/resources/images/btn-prev.png) no-repeat
+	background: url(../../webapp/resources/images/btn-prev.png) no-repeat
 		center;
 }
 
 .btn-next {
 	width: 15px;
 	height: 15px;
-	background: url(../../wepapp/resources/images/btn-next.png) no-repeat
+	background: url(../webapp/resources/images/btn-next.png) no-repeat
 		center;
 }
 
-/* ---------------------------------------------------------------- */
+/* --table-------------------------------------------------------------- */
+.RecruitTable, .RecruitTable th, RecruitTable td{
+	border: 0;
 
+}
+.RecruitTable{
 
+	width: 100%;
+	border-bottom: 1px solid #999;
+	color: #666;
+	font-size:  12px;
+	table-layout: fixed;
+}
+
+.RecruitTable th{
+	padding: 5px 0 6px;
+	border-top: solid 1px #b2b2b2;
+	background-color: #f1f1f4;
+	color: #333;
+	font-weight: bold;
+	line-height: 20px;
+	vertical-align: top;
+}
+.RecruitTable td{
+	padding: 8px 0 9px;
+	border-bottom: solid 1px #d2d2d2;
+	text-align: center;
+	line-height: 18px;
+	
+}
+
+.RecruitTable .id{
+	padding: 0px;
+	font-family: Tahoma;
+	font-size: 11px;
+	line-height: normal;
+}
+
+.RecruitTable .title{ 
+	text-align: left;
+	padding-left: 15px;
+	font-size: 13px
+}
+
+.RecruitTable .period{ 
+	text-align: center;
+	padding-left: 15px;
+	font-size: 13px
+}
 
 </style> 
 
@@ -114,7 +162,7 @@ ol, ul {
 		</ul>
 	</section>
 
-	<!-- -----------body------------------------------------------------------- -->
+	<!-- -----------main------------------------------------------------------- -->
 	<section class="employ-notice-container">
 		<h1>채용공고</h1>
 		<span>현재 진행 중인 채용공고를 확인할 수 있습니다.</span>
@@ -155,24 +203,37 @@ ol, ul {
 	
 		<div>
 			<h1 class="hidden">게시판</h1>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col" abbr="제목" class="fst" colspan="2"><img src=""
-							alt="제목"></th>
-						<th scope="col" abbr="모집기간"><img src="" alt="모집기간"></th>
-						<th scope="col" abbr="구분"><img src="" alt="구분"></th>
-						<th scope="col" abbr="진행상황"><img src="" alt="진행상황"></th>
-					</tr>
-				</thead>
-	
+			<table class="RecruitTable" border="1" cellspacing="0">
+				 <colgroup>
+				 	<col width="50">
+				 	<col>
+				 	<col width="200">
+				 	<col width="80">
+				 	<col width="110">				 
+				 </colgroup>
+				 <thead>
+	                <tr>
+	                	<th scope="col">번호</th>
+	                    <th scope="col">제목</th>
+	                    <th scope="col">모집기간</th>
+	                    <th scope="col">채용구분</th>
+	                    <th scope="col">진행상황</th>
+	                   
+	                </tr>
+            	</thead>
 				<tbody>
-					<tr>
-						<td>제목</td>
-						<td>모집기간</td>
-						<td>구분</td>
-						<td>진행상황</td>
-					</tr>
+					
+					<!-- var="rdl" items="${recruitDivisionList}" -->
+					<c:forEach var="rnl" items="${recruitNoticeList}" >
+						<tr>
+							<td class="id">${rnl.id}</td>
+							<td class="title"><a href="detail?id=${rnl.id}">${rnl.title}</a></td>
+							<td class="period"><fmt:formatDate value="${rnl.strDate}" pattern="yyyy-MM-dd"/> - <fmt:formatDate value="${rnl.endDate}" pattern="yyyy-MM-dd"/></td>
+							<td class="division">${rnl.employDivsionName}</td>
+							<td>???</td>
+						</tr>				
+					</c:forEach>
+					
 				</tbody>
 			</table>
 		</div>

@@ -15,21 +15,24 @@
 			title,
 			contents,
 			reg_date as regDate,
-			writer 
+			writer,
+			Employ_Division 
 		from Recruit_Notice as RecruitNotice
 		where id = #{param1}
 	</select>
 	
 	<select id="getList" resultType="com.blindproject.blind.entity.RecruitNotice">
 		select 
-			 id,
-			 title,
-			 contents,
-			 reg_date as regDate,
-			 writer,
-			 str_date as strDate,
-			 end_date as endDate
-		from Recruit_Notice as RecruitNotice
+			 A.id,
+			 A.title,
+			 A.contents,
+			 A.reg_date as regDate,
+			 A.writer,
+			 A.str_date as strDate,
+			 A.end_date as endDate,
+			 B.value as employDivsionName
+		from Recruit_Notice A
+		 left outer join Recruit_Division B on A.Employ_Division = B.id
 	</select>
 	
 </mapper>
