@@ -8,7 +8,7 @@ public interface RecruitNoticeDao {
 	
 	public int insertRecruitNotice(RecruitNotice recruitNotice);
 
-	int update(RecruitNotice recruitNotice);
+	public int updateRecruitNotice(RecruitNotice recruitNotice);
 	
 	int delete(Integer id);
 	

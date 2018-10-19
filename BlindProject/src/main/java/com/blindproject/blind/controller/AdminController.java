@@ -38,7 +38,7 @@ public class AdminController {
 	@GetMapping("index")
 	public String AdminIndex(Model model) {
 		
-		return "admin.admin_index";
+		return "admin.index";
 		
 	}
 	
@@ -66,7 +66,7 @@ public class AdminController {
 		
 		adminService.insertNotice(notice);
 		
-		return "admin.admin_index";
+		return "admin.index";
 		
 	}
 	

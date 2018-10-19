@@ -31,7 +31,7 @@
 					<td>
 					<!-- RecruitDivision 테이블에서 가져오기 -->
 						<label>채용구분 : </label>
-						<select name="employDivision">
+						<select name="recruitDivisionId">
   							<option value="0">선택</option>
   							<c:forEach var="rdl" items="${recruitDivisionList}">
 								<option value="${rdl.id}">${rdl.value}</option>
