@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <main>
 <dt class="title"><strong>(주)블라인드 채용</strong></dt>
 	<dl class="data">
@@ -37,8 +38,11 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td><select>
-					<option value="">선택</option>
+			<td><select name ="militarygroupId">
+					<option value="0">선택</option>
+  							<c:forEach var="militarygroup" items="${militarygroupList}">					
+								<option value="${militarygroup.id}"> ${militarygroup.value}</option>
+							</c:forEach>
 
 			</select></td>
 			<td>
@@ -49,15 +53,20 @@
 					<p>날짜: <input type="text" name  ="endWorkDate" class="datepicker"></p>
 					 </td>
 			
-			<td><select>
+			<td><select name= "ClassesId">
 					<option value="">선택</option>
-				
+					<c:forEach var="classes" items="${classesList}">					
+								<option value="${classes.id}"> ${classes.value}</option>
+					</c:forEach>
 			</select>
 			</td>
 			
 			<td>
-			<select>
+			<select name ="DischargeId">
 					<option value="">선택</option>
+					<c:forEach var="discharge" items="${dischargeList}">					
+								<option value="${discharge.id}"> ${discharge.value}</option>
+					</c:forEach>
 			</select></td>
 			</tr>
 		</tbody>

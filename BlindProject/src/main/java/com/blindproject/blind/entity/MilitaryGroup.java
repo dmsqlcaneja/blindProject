@@ -1,5 +1,7 @@
 package com.blindproject.blind.entity;
 
+import java.util.List;
+
 //군별 
 public class MilitaryGroup {
 
@@ -30,4 +32,6 @@ public class MilitaryGroup {
 		this.id = param.getId();
 		this.value = param.getValue();
 	}
+
+	
 }

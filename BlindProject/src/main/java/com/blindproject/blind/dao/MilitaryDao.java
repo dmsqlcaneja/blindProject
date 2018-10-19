@@ -2,11 +2,12 @@ package com.blindproject.blind.dao;
 
 import java.util.List;
 
-import com.blindproject.blind.entity.Military;
+
+import com.blindproject.blind.entity.MilitaryGroup;
 
 public interface MilitaryDao {
-	
-	Military get(Integer id);
-	
-	List<Military> getList();
+//	
+//	MilitaryGroup get(Integer id);
+//	
+//	List<MilitaryGroup> getList();
 }
