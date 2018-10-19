@@ -1,6 +1,7 @@
 package com.blindproject.blind.entity;
 
 //경력사항 
+//경력사항 
 public class Career {
 
  // 아이디 
@@ -16,7 +17,7 @@ public class Career {
  private String importantAchievements;
 
  // 연간급여 
- private String salary;
+ private String ySalary;
 
  // 개인정보아이디 
  private Integer personalInfoId;
@@ -53,12 +54,12 @@ public class Career {
      this.importantAchievements = importantAchievements;
  }
 
- public String getSalary() {
-     return salary;
+ public String getYSalary() {
+     return ySalary;
  }
 
- public void setSalary(String salary) {
-     this.salary = salary;
+ public void setYSalary(String ySalary) {
+     this.ySalary = ySalary;
  }
 
  public Integer getPersonalInfoId() {
@@ -76,7 +77,7 @@ public class Career {
      this.importantTask1 = param.getImportantTask1();
      this.importantTask2 = param.getImportantTask2();
      this.importantAchievements = param.getImportantAchievements();
-     this.salary = param.getSalary();
+     this.ySalary = param.getYSalary();
      this.personalInfoId = param.getPersonalInfoId();
  }
 }

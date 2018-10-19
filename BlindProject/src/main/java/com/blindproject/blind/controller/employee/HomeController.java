@@ -76,6 +76,9 @@ public class HomeController {
 		RecruitNotice recruitNotice = new RecruitNotice();
 		recruitNotice.setTitle(request.getParameter("title"));
 		recruitNotice.setContents(request.getParameter("contents"));
+
+		System.out.println(request.getParameter("title"));
+		System.out.println(request.getParameter("contents"));
 		
 		Date strDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("strDate"));
 		Date endDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("endDate"));

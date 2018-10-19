@@ -17,7 +17,7 @@
 </dl>
 
 <div>
-		<a href="">개인사항</a> 
+		<a href="index">개인사항</a> 
 	  	<a href="">병역사항</a>
 		<a href="">자기소개</a>
 		<a href="">작성완료</a>
@@ -36,7 +36,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<td><selectz>
+			<td><select>
 					<option value="">선택</option>
 					<option value="A">만기제대</option>
 					<option value="C">방위소집해제</option>

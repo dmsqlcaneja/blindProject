@@ -1,13 +1,15 @@
 package com.blindproject.blind.entity;
 
+import java.util.Date;
+
 //회사경력 
 public class CompanyCareer {
-
+  
  // 아이디 
  private Integer id;
 
- // 근무기간 
- private String workDate;
+ // 근무시작일 
+ private Date strWorkDate;
 
  // 회사명 
  private String companyName;
@@ -27,6 +29,9 @@ public class CompanyCareer {
  // 개인정보아이디 
  private Integer personalInfoId;
 
+ // 근무종료일 
+ private Date endWorkDate;
+
  public Integer getId() {
      return id;
  }
@@ -35,12 +40,12 @@ public class CompanyCareer {
      this.id = id;
  }
 
- public String getWorkDate() {
-     return workDate;
+ public Date getStrWorkDate() {
+     return strWorkDate;
  }
 
- public void setWorkDate(String workDate) {
-     this.workDate = workDate;
+ public void setStrWorkDate(Date strWorkDate) {
+     this.strWorkDate = strWorkDate;
  }
 
  public String getCompanyName() {
@@ -91,16 +96,25 @@ public class CompanyCareer {
      this.personalInfoId = personalInfoId;
  }
 
+ public Date getEndWorkDate() {
+     return endWorkDate;
+ }
+
+ public void setEndWorkDate(Date endWorkDate) {
+     this.endWorkDate = endWorkDate;
+ }
+
  // CompanyCareer 모델 복사
  public void CopyData(CompanyCareer param)
  {
      this.id = param.getId();
-     this.workDate = param.getWorkDate();
+     this.strWorkDate = param.getStrWorkDate();
      this.companyName = param.getCompanyName();
      this.position = param.getPosition();
      this.task = param.getTask();
      this.salary = param.getSalary();
      this.retirement = param.getRetirement();
      this.personalInfoId = param.getPersonalInfoId();
+     this.endWorkDate = param.getEndWorkDate();
  }
 }

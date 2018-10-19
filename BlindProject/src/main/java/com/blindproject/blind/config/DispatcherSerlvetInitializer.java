@@ -2,6 +2,7 @@ package com.blindproject.blind.config;
 
 import javax.servlet.Filter;
 
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 //Web.xml에서 DispatcherServlet 생성한 부분이다.라고 생각하면 댐
@@ -78,9 +79,16 @@ public class DispatcherSerlvetInitializer extends AbstractAnnotationConfigDispat
 		return new String[] {"/"};
 	}
 	
+	//한글 살려
 	@Override
     protected Filter[] getServletFilters() {
-		return null;
+		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+	    characterEncodingFilter.setEncoding("UTF-8"); //기본 encoding 방식을 UTF-8로 설정
+	    characterEncodingFilter.setForceEncoding(true); //어떤 경우라도 이 encoding 방식을 강제 적용
+
+	    return new Filter[] {
+	        characterEncodingFilter
+	    };
     }
 
 	

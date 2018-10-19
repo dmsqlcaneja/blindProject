@@ -9,11 +9,10 @@
 		<a href="">작성완료</a>
 	</div>
 	
-<form action = "CareerService" method="post">
+<form method="post">
 					<h3>회사 경력</h3>
 					
 					<!-- input type1 start -->
-					<div id="collection" class="input_type1 col">
 					<table>
 						<thead>
 							<tr>
@@ -29,31 +28,30 @@
 			<tbody>
 				<tr name="trStaff">
 					<td>
-					<p> 날짜: <input type="text" class="datepicker" size="20" ></p>
+					<p> 날짜: <input type="text" name = "strWorkDate" class="datepicker" size="20" ></p>
 
 					 <span class="label">~</span>
 					
-					<p>날짜: <input type="text" class="datepicker"></p>
+					<p>날짜: <input type="text" name  ="endWorkDate" class="datepicker"></p>
 					 </td>
 					 
-					<td><input type="text"  name="staff_name" style="width: 68px;"/></td>
-					<td><input type="text" name="staff_contact" style="width: 68px;" /></td>
-					<td><input type="text" name="staff_contact2" style="width: 82px;" /></td>
-					<td><input type="text" name="staff_email" style="width: 68px;"></td>
-					<td><input type="text" name="staff_Reason" style="width: 176px;" /></td>
+					<td><input type="text"  name="companyName" style="width: 68px;"/></td>
+					<td><input type="text" name="position" style="width: 68px;" /></td>
+					<td><input type="text" name="task" style="width: 82px;" /></td>
+					<td><input type="text" name="salary" style="width: 68px;"></td>
+					<td><input type="text" name="retirement" style="width: 176px;" /></td>
 					<td><a href = "">삭제</a></td>
 				</tr>
 
 				<tr>
 					<td class="add" colspan="7">항목 추가 시 추가 버튼을 눌러주시기 바랍니다. 
 					<em>(최대 4개까지 가능)</em>
-				<button name="addStaff">축</button>
+				<button name="addStaff">추가</button>
 					</td>
 				</tr>
 			</tbody>
 
 		</table>
-					</div>
 					<!-- <div id="hidden01" style="display:none;"></div> -->
 					<!--// input type1 end -->
 					
@@ -61,25 +59,25 @@
 					<h3>최근직장경력</h3>
 					
 					<!-- input type1 start -->
-					<div class="input_type1 row">
+
 					<table>
 					
 						<tbody>
 							<tr class="fst">
 								<th>주요담당업무 1 <em>*</em></th>
-								<td><input name="jobnm1" id="jobnm1" ></td>
+								<td><input type = "text" name="importantTask1" id="jobnm1" ></td>
 								<th>주요담당업무 2<em>*</em></th>
-								<td><input type="text" style="width:268px;"></td>
+								<td><input type="text" name = "oortantTask2" style="width:268px;"></td>
 							</tr>
 							<tr>
 								<th>주요업적 <em>*</em></th>
-								<td colspan="3"><input type="text" style="width:720px;"></td>
+								<td colspan="3"><input type="text" name = "importantachievements" style="width:720px;"></td>
 							</tr>
 							<tr>
 								<th>연간급여<em title=>*</em></th>
 								<td>
 									<label>(월고정급여*12) + 연간상여총액 &nbsp;</label>
-									<input type="text" style="width:84px;" />
+									<input type="text" name = "Ysalary" style="width:84px;" />
 									<span class="label">만원</span>
 								</td>
 								<th scope="row" abbr="제수당총액">제수당총액<em title="필수입력사항">*</em></th>
@@ -91,8 +89,8 @@
 							</tr>
 						</tbody>
 					</table>
-					</div>
-					
+
+				 	<input type = "submit" value ="다음단계">
 				</form>
 </main>
 

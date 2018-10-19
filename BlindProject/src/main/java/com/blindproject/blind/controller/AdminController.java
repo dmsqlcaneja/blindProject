@@ -18,7 +18,7 @@ import com.blindproject.blind.entity.RecruitDivision;
 import com.blindproject.blind.entity.Type;
 import com.blindproject.blind.service.AdminService;
 
-@Controller
+@Controller 
 @RequestMapping("/admin/")
 public class AdminController {
 	
