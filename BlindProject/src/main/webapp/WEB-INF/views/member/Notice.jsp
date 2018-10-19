@@ -77,12 +77,12 @@ ol, ul {
 
 <div class="body">
 	<!-- -----------aside------------------------------------------------------- -->
-	<section class="employ-info-container">
+	<section id="employ-info-container">
 		<h1>채용정보</h1>
 		<ul class="employ-header">
-			<li><a href="">채용공고</a></li>
-			<li><a href="">상시채용</a></li>
-			<li><a href="">공지사항</a></li>
+			<li><a href="" class="recruit-notice">채용공고</a></li>
+			<li><a href="" class="regular-recruit">상시채용</a></li>
+			<li><a href="" class="notice">공지사항</a></li>
 
 		</ul>
 	</section>

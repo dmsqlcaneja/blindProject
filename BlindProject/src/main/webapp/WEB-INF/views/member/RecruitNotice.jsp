@@ -152,12 +152,12 @@ ol, ul {
 <div class="body"> 
 
 	<!-- -----------aside------------------------------------------------------- -->
-	<section class="employ-info-container">
+	<section id="employ-info-container">
 		<h1>채용정보</h1>
 		<ul class="employ-header">
-			<li><a href="">채용공고</a></li>
-			<li><a href="">상시채용</a></li>
-			<li><a href="">공지사항</a></li>
+			<li><a href="" class="recruit-notice">채용공고</a></li>
+			<li><a href="" class="regular-recruit">상시채용</a></li>
+			<li><a href="" class="notice">공지사항</a></li>
 
 		</ul>
 	</section>
@@ -184,8 +184,8 @@ ol, ul {
 			</select></td>
 		</tr>
 	
-		<tr>
-			<td><label>진행상황 : </label> <select name="situation">
+
+		<td><label>진행상황 : </label> <select name="situation">
 					<option value selected>전체</option>
 					<option value="receive-schedule">접수예정</option>
 					<option value="receive-ing">접수중</option>
@@ -229,7 +229,7 @@ ol, ul {
 							<td class="id">${rnl.id}</td>
 							<td class="title"><a href="detail?id=${rnl.id}">${rnl.title}</a></td>
 							<td class="period"><fmt:formatDate value="${rnl.strDate}" pattern="yyyy-MM-dd"/> - <fmt:formatDate value="${rnl.endDate}" pattern="yyyy-MM-dd"/></td>
-							<td class="division">${rnl.employDivsionName}</td>
+							<td class="division"><%-- ${rnl.employDivsionName} --%></td>
 							<td>???</td>
 						</tr>				
 					</c:forEach>

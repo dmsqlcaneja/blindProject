@@ -3,40 +3,48 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.blindproject.blind.dao.RecruitNoticeDao">
-	
-	<!-- writerId는 회원가입 만들고 변경해줍시다... -->
-	<insert id="insertRecruitNotice" parameterType="com.blindproject.blind.entity.RecruitNotice">
-		insert into Recruit_Notice(title, contents, reg_date, writer, str_date, end_date)
-		values(#{title}, #{contents}, curdate(), 1, #{strDate}, #{endDate});
-	</insert>
-	
-	<select id="get" resultType="com.blindproject.blind.entity.RecruitNotice">
-		select
-			id,
-			title,
-			contents,
-			reg_date as regDate,
-			writer,
-			Employ_Division 
-			str_date as strDate,
-			end_date as endDate
-		from Recruit_Notice as RecruitNotice
-		where id = #{param1}
-	</select>
-	
-	<select id="getList" resultType="com.blindproject.blind.entity.RecruitNotice">
-		select 
-			 A.id,
-			 A.title,
-			 A.contents,
-			 A.reg_date as regDate,
-			 A.writer,
-			 A.str_date as strDate,
-			 A.end_date as endDate,
-			 B.value as employDivsionName
-		from Recruit_Notice A
-		 left outer join Recruit_Division B on A.recruit_division_id = B.id
-
-	</select>
-	
+   
+   <!-- writerId는 회원가입 만들고 변경해줍시다... -->
+   <insert id="insertRecruitNotice" parameterType="com.blindproject.blind.entity.RecruitNotice">
+      insert into Recruit_Notice(title, contents, reg_date, writer_id, str_date, end_date, recruit_division_id, company_id)
+      values(#{title}, #{contents}, curdate(), 1, #{strDate}, #{endDate}, #{recruitDivisionId}, #{companyId});
+   </insert>
+   
+   <select id="get" resultType="com.blindproject.blind.entity.RecruitNotice">
+      Select
+         rn.id,
+         rn.title,
+         rn.contents,
+         rn.reg_date as regDate,
+         rn.writer_id,
+         rn.str_date as strDate,
+         rn.end_date as endDate,
+         c.name as cName,
+         rd.value as rdValue
+      From Recruit_Notice rn 
+      left JOIN Company c
+      ON rn.company_id = c.id
+      left JOIN Recruit_Division rd
+      ON rn.recruit_division_id = rd.id
+      where rn.id = #{param1}
+   </select>
+   
+   <select id="getList" resultType="com.blindproject.blind.entity.RecruitNotice">
+      Select
+         rn.id,
+         rn.title,
+         rn.contents,
+         rn.reg_date as regDate,
+         rn.writer_id,
+         rn.str_date as strDate,
+         rn.end_date as endDate,
+         c.name,
+         rd.value
+      From Recruit_Notice rn 
+      left JOIN Company c
+      ON rn.company_id = c.id
+      left JOIN Recruit_Division rd
+      ON rn.recruit_division_id = rd.id
+   </select>
+   
 </mapper>

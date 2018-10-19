@@ -9,6 +9,7 @@
 <!-- content="width=device-width dp 단위 -->
 <link href="/resources/css/style.css" type="text/css" rel="stylesheet" />
 <script src="./resources/js/index.js"></script>
+<script src="./resources/js/member/recruitNotice.js"></script>
 <title>index</title>
 </head>
 <body>
