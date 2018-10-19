@@ -2,6 +2,7 @@ package com.blindproject.blind.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -44,31 +45,35 @@ public class ApplyController {
 	}
 	//-------------------------------------------------------------------------------
 	
+	
+	//----------introduction------------------------------------------------------//
 	@RequestMapping("introduction")
 	public String Introduction (Model model){
 
 		return "apply.introduction";
 	}
-
+	//----------------------------------------------------------------------------//
+	
+	//----------index------------------------------------------------------//
 	@RequestMapping("index")
 	public String Index (Model model){
 
 		return "apply.index";
 	}
+	//----------------------------------------------------------------//
 	
 	//----------military------------------------------------------------------//
 	@GetMapping("military")
-	public String military(HttpSession session, Military military) {
-//		List<discharge> discharges = 
-		
-		session.setAttribute("Military", military);
-		
-		
+	public String military(HttpSession session,Model model, Military military) {
+	
+				
+//		session.setAttribute("Military", military);
 		return "apply.military";
+		
 	}
 	
 	
-	@PostMapping("military-service")
+	@PostMapping("military")
 	public String militaryservice(HttpSession session, Military military) {
 		session.setAttribute("Military", military);
 //		session.setAttribute("A", );
