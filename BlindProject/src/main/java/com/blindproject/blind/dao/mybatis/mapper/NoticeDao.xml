@@ -7,10 +7,8 @@
 <mapper namespace="com.blindproject.blind.dao.NoticeDao">
 
 	<insert id="insert" parameterType="com.blindproject.blind.entity.Notice">
-		insert into Notice (title, reg_date, type_id, company_id, Employ_Division, contents)
-		values(#{title}, sysdate(), #{typeId}, #{companyId}, #{employDivision}, #{contents})
+		insert into Notice (title, reg_date, type_id, company_id, recruit_division_id, contents)
+		values(#{title}, sysdate(), #{typeId}, #{companyId}, #{recruitDivisionId}, #{contents})
 	</insert>
 
-
-	
 </mapper>
