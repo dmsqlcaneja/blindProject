@@ -4,117 +4,116 @@ import java.util.Date;
 
 //회사경력 
 public class CompanyCareer {
-  
- // 아이디 
- private Integer id;
 
- // 근무시작일 
- private Date strWorkDate;
+	// 아이디
+	private Integer id;
 
- // 회사명 
- private String companyName;
+	// 근무시작일
+	private Date strWorkDate;
 
- // 직위 
- private String position;
+	// 회사명
+	private String companyName;
 
- // 담당업무 
- private String task;
+	// 직위
+	private String position;
 
- // 연봉(만원) 
- private String salary;
+	// 담당업무
+	private String task;
 
- // 퇴직사유 
- private String retirement;
+	// 연봉(만원)
+	private String salary;
 
- // 개인정보아이디 
- private Integer personalInfoId;
+	// 퇴직사유
+	private String retirement;
 
- // 근무종료일 
- private Date endWorkDate;
+	// 개인정보아이디
+	private Integer personalInfoId;
 
- public Integer getId() {
-     return id;
- }
+	// 근무종료일
+	private Date endWorkDate;
 
- public void setId(Integer id) {
-     this.id = id;
- }
+	public Integer getId() {
+		return id;
+	}
 
- public Date getStrWorkDate() {
-     return strWorkDate;
- }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
- public void setStrWorkDate(Date strWorkDate) {
-     this.strWorkDate = strWorkDate;
- }
+	public Date getStrWorkDate() {
+		return strWorkDate;
+	}
 
- public String getCompanyName() {
-     return companyName;
- }
+	public void setStrWorkDate(Date strWorkDate) {
+		this.strWorkDate = strWorkDate;
+	}
 
- public void setCompanyName(String companyName) {
-     this.companyName = companyName;
- }
+	public String getCompanyName() {
+		return companyName;
+	}
 
- public String getPosition() {
-     return position;
- }
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
 
- public void setPosition(String position) {
-     this.position = position;
- }
+	public String getPosition() {
+		return position;
+	}
 
- public String getTask() {
-     return task;
- }
+	public void setPosition(String position) {
+		this.position = position;
+	}
 
- public void setTask(String task) {
-     this.task = task;
- }
+	public String getTask() {
+		return task;
+	}
 
- public String getSalary() {
-     return salary;
- }
+	public void setTask(String task) {
+		this.task = task;
+	}
 
- public void setSalary(String salary) {
-     this.salary = salary;
- }
+	public String getSalary() {
+		return salary;
+	}
 
- public String getRetirement() {
-     return retirement;
- }
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
 
- public void setRetirement(String retirement) {
-     this.retirement = retirement;
- }
+	public String getRetirement() {
+		return retirement;
+	}
 
- public Integer getPersonalInfoId() {
-     return personalInfoId;
- }
+	public void setRetirement(String retirement) {
+		this.retirement = retirement;
+	}
 
- public void setPersonalInfoId(Integer personalInfoId) {
-     this.personalInfoId = personalInfoId;
- }
+	public Integer getPersonalInfoId() {
+		return personalInfoId;
+	}
 
- public Date getEndWorkDate() {
-     return endWorkDate;
- }
+	public void setPersonalInfoId(Integer personalInfoId) {
+		this.personalInfoId = personalInfoId;
+	}
 
- public void setEndWorkDate(Date endWorkDate) {
-     this.endWorkDate = endWorkDate;
- }
+	public Date getEndWorkDate() {
+		return endWorkDate;
+	}
 
- // CompanyCareer 모델 복사
- public void CopyData(CompanyCareer param)
- {
-     this.id = param.getId();
-     this.strWorkDate = param.getStrWorkDate();
-     this.companyName = param.getCompanyName();
-     this.position = param.getPosition();
-     this.task = param.getTask();
-     this.salary = param.getSalary();
-     this.retirement = param.getRetirement();
-     this.personalInfoId = param.getPersonalInfoId();
-     this.endWorkDate = param.getEndWorkDate();
- }
+	public void setEndWorkDate(Date endWorkDate) {
+		this.endWorkDate = endWorkDate;
+	}
+
+	// CompanyCareer 모델 복사
+	public void CopyData(CompanyCareer param) {
+		this.id = param.getId();
+		this.strWorkDate = param.getStrWorkDate();
+		this.companyName = param.getCompanyName();
+		this.position = param.getPosition();
+		this.task = param.getTask();
+		this.salary = param.getSalary();
+		this.retirement = param.getRetirement();
+		this.personalInfoId = param.getPersonalInfoId();
+		this.endWorkDate = param.getEndWorkDate();
+	}
 }

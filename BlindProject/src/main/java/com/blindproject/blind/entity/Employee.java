@@ -1,6 +1,6 @@
 package com.blindproject.blind.entity;
 
-//신세계 직원 
+//직원 정보 
 public class Employee {
 
 	// 사원번호
@@ -19,7 +19,7 @@ public class Employee {
 	private String email;
 
 	// 전화번호
-	private String phonNumber;
+	private String phoneNumber;
 
 	// 이름
 	private String name;
@@ -64,12 +64,12 @@ public class Employee {
 		this.email = email;
 	}
 
-	public String getPhonNumber() {
-		return phonNumber;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhonNumber(String phonNumber) {
-		this.phonNumber = phonNumber;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getName() {
@@ -80,14 +80,14 @@ public class Employee {
 		this.name = name;
 	}
 
-	// SinEmployee 모델 복사
+	// Employee 모델 복사
 	public void CopyData(Employee param) {
 		this.id = param.getId();
 		this.companyId = param.getCompanyId();
 		this.loginId = param.getLoginId();
 		this.pwd = param.getPwd();
 		this.email = param.getEmail();
-		this.phonNumber = param.getPhonNumber();
+		this.phoneNumber = param.getPhoneNumber();
 		this.name = param.getName();
 	}
 
@@ -95,7 +95,7 @@ public class Employee {
 		super();
 	}
 
-	public Employee(Integer id, Integer companyId, String loginId, String pwd, String email, String phonNumber,
+	public Employee(Integer id, Integer companyId, String loginId, String pwd, String email, String phoneNumber,
 			String name) {
 		super();
 		this.id = id;
@@ -103,9 +103,8 @@ public class Employee {
 		this.loginId = loginId;
 		this.pwd = pwd;
 		this.email = email;
-		this.phonNumber = phonNumber;
+		this.phoneNumber = phoneNumber;
 		this.name = name;
 	}
-	
 	
 }
