@@ -25,11 +25,11 @@ public class MybatisRecruitNoticeDao implements RecruitNoticeDao {
 	}
 
 	@Override
-	public int update(RecruitNotice recruitNotice) {
+	public int updateRecruitNotice(RecruitNotice recruitNotice) {
 		
 		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
 		
-		return recruitNoticeDao.update(recruitNotice);
+		return recruitNoticeDao.updateRecruitNotice(recruitNotice);
 	}
 
 	@Override

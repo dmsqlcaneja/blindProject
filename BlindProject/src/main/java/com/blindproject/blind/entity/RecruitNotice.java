@@ -31,6 +31,11 @@ public class RecruitNotice {
 
 	// 회사명
 	private Integer companyId;
+	
+	
+	//조인 컬럼--------------
+	private String recruitDivisionValue;
+	
 
 	public Integer getId() {
 		return id;
@@ -103,6 +108,15 @@ public class RecruitNotice {
 	public void setCompanyId(Integer companyId) {
 		this.companyId = companyId;
 	}
+	
+	//조인 컬럼--------------
+	public String getRecruitDivisionValue() {
+		return recruitDivisionValue;
+	}
+
+	public void setRecruitDivisionValue(String recruitDivisionValue) {
+		this.recruitDivisionValue = recruitDivisionValue;
+	}
 
 	// RecruitNotice 모델 복사
 	public void CopyData(RecruitNotice param) {
@@ -115,6 +129,7 @@ public class RecruitNotice {
 		this.endDate = param.getEndDate();
 		this.recruitDivisionId = param.getRecruitDivisionId();
 		this.companyId = param.getCompanyId();
+		this.recruitDivisionValue = param.getRecruitDivisionValue();
 	}
 
 	public RecruitNotice() {
@@ -122,7 +137,7 @@ public class RecruitNotice {
 	}
 
 	public RecruitNotice(Integer id, String title, String contents, Date regDate, Integer writerId, Date strDate,
-			Date endDate, Integer recruitDivisionId, Integer companyId) {
+			Date endDate, Integer recruitDivisionId, Integer companyId, String recruitDivisionValue) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -133,6 +148,8 @@ public class RecruitNotice {
 		this.endDate = endDate;
 		this.recruitDivisionId = recruitDivisionId;
 		this.companyId = companyId;
+		this.recruitDivisionValue = recruitDivisionValue;
 	}
+
 	
 }
