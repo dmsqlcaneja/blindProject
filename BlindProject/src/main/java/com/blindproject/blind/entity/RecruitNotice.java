@@ -18,7 +18,7 @@ public class RecruitNotice {
 	private Date regDate;
 
 	// 작성자
-	private Integer writer;
+	private Integer writerId;
 
 	// 모집시작일
 	private Date strDate;
@@ -27,7 +27,10 @@ public class RecruitNotice {
 	private Date endDate;
 
 	// 채용구분
-	private Integer employDivision;
+	private Integer recruitDivisionId;
+
+	// 회사명
+	private Integer companyId;
 
 	public Integer getId() {
 		return id;
@@ -61,12 +64,12 @@ public class RecruitNotice {
 		this.regDate = regDate;
 	}
 
-	public Integer getWriter() {
-		return writer;
+	public Integer getWriterId() {
+		return writerId;
 	}
 
-	public void setWriter(Integer writer) {
-		this.writer = writer;
+	public void setWriterId(Integer writerId) {
+		this.writerId = writerId;
 	}
 
 	public Date getStrDate() {
@@ -84,21 +87,21 @@ public class RecruitNotice {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-	
-	public Integer getEmployDivsionName() {
-		return employDivision;
+
+	public Integer getRecruitDivisionId() {
+		return recruitDivisionId;
 	}
 
-	public void setEmployDivsionName(Integer employDivsion) {
-		this.employDivision = employDivsion;
+	public void setRecruitDivisionId(Integer recruitDivisionId) {
+		this.recruitDivisionId = recruitDivisionId;
 	}
 
-	public Integer getEmployDivision() {
-		return employDivision;
+	public Integer getCompanyId() {
+		return companyId;
 	}
 
-	public void setEmployDivision(Integer employDivision) {
-		this.employDivision = employDivision;
+	public void setCompanyId(Integer companyId) {
+		this.companyId = companyId;
 	}
 
 	// RecruitNotice 모델 복사
@@ -107,27 +110,29 @@ public class RecruitNotice {
 		this.title = param.getTitle();
 		this.contents = param.getContents();
 		this.regDate = param.getRegDate();
-		this.writer = param.getWriter();
+		this.writerId = param.getWriterId();
 		this.strDate = param.getStrDate();
 		this.endDate = param.getEndDate();
-		this.employDivision = param.getEmployDivision();
+		this.recruitDivisionId = param.getRecruitDivisionId();
+		this.companyId = param.getCompanyId();
 	}
 
 	public RecruitNotice() {
 		super();
 	}
 
-	public RecruitNotice(Integer id, String title, String contents, Date regDate, Integer writer, Date strDate,
-			Date endDate, Integer employDivision) {
+	public RecruitNotice(Integer id, String title, String contents, Date regDate, Integer writerId, Date strDate,
+			Date endDate, Integer recruitDivisionId, Integer companyId) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.contents = contents;
 		this.regDate = regDate;
-		this.writer = writer;
+		this.writerId = writerId;
 		this.strDate = strDate;
 		this.endDate = endDate;
-		this.employDivision = employDivision;
+		this.recruitDivisionId = recruitDivisionId;
+		this.companyId = companyId;
 	}
 	
 }
