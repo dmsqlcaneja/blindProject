@@ -17,11 +17,11 @@ public class MybatisRecruitNoticeDao implements RecruitNoticeDao {
 	private SqlSession sqlSession;
 	
 	@Override
-	public int insert(RecruitNotice recruitNotice) {
+	public int insertRecruitNotice(RecruitNotice recruitNotice) {
 		
 		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
 		
-		return recruitNoticeDao.insert(recruitNotice);
+		return recruitNoticeDao.insertRecruitNotice(recruitNotice);
 	}
 
 	@Override
@@ -53,9 +53,18 @@ public class MybatisRecruitNoticeDao implements RecruitNoticeDao {
 	
 		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
 		
-		return recruitNoticeDao.getList();
+		return recruitNoticeDao.getList("id", "", 1);
 	}
 
+	
+	@Override
+	public List<RecruitNotice> getList(String field) {
+		
+		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
+		
+		return recruitNoticeDao.getList(field, "", 1);
+	}
+	
 	@Override
 	public List<RecruitNotice> getList(String field, String query, int page) {
 		
