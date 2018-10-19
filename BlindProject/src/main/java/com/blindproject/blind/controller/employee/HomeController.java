@@ -77,19 +77,23 @@ public class HomeController {
 		recruitNotice.setTitle(request.getParameter("title"));
 		recruitNotice.setContents(request.getParameter("contents"));
 
-		System.out.println(request.getParameter("title"));
-		System.out.println(request.getParameter("contents"));
-		
 		Date strDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("strDate"));
 		Date endDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("endDate"));
 		recruitNotice.setStrDate(strDate);
 		recruitNotice.setEndDate(endDate);
 		
+		Integer rdid = Integer.parseInt(request.getParameter("recruitDivisionId"));
+		recruitNotice.setRecruitDivisionId(rdid);
+
+		Integer cid = Integer.parseInt(request.getParameter("companyId"));
+		recruitNotice.setCompanyId(cid);
+
 		recruitNoticeDao.insertRecruitNotice(recruitNotice);
 		
-		return "employee.index";
+		return "redirect:index";
 	}
 	
+	//채용공고 상세 페이지
 	@GetMapping("detail")
 	public String detail(Model model
 			, @RequestParam("id") Integer id) {
@@ -101,6 +105,7 @@ public class HomeController {
 		return "employee.detail";
 	}
 	
+	//채용공고 수정 페이지
 	@GetMapping("edit")
 	public String edit(Model model
 			, @RequestParam("id") Integer id) {
@@ -118,6 +123,30 @@ public class HomeController {
 		model.addAttribute("recruitDivisionList", recruitDivision);
 		
 		return "employee.edit";
+	}
+	
+	@PostMapping("edit")
+	public String edit(HttpServletRequest request
+			, @RequestParam("id") Integer id) throws ParseException {
+		
+		RecruitNotice recruitNotice = recruitNoticeDao.get(id);
+		recruitNotice.setTitle(request.getParameter("title"));
+		recruitNotice.setContents(request.getParameter("contents"));
+
+		Date strDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("strDate"));
+		Date endDate = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("endDate"));
+		recruitNotice.setStrDate(strDate);
+		recruitNotice.setEndDate(endDate);
+		
+		Integer rdid = Integer.parseInt(request.getParameter("recruitDivisionId"));
+		recruitNotice.setRecruitDivisionId(rdid);
+
+		Integer cid = Integer.parseInt(request.getParameter("companyId"));
+		recruitNotice.setCompanyId(cid);
+
+		recruitNoticeDao.updateRecruitNotice(recruitNotice);
+		
+		return "redirect:index";
 	}
 	
 	

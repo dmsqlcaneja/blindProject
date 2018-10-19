@@ -10,8 +10,9 @@
 				<span>지원자수 : ?? 명</span>
 			</div>
 			<div>
-				<p>접수 마감일 : <fmt:formatDate value="${rnl.endDate}" pattern="yyyy-MM-dd"/></p>
-				<p>채용구분 : </p>
+				<p>모집 시작일 : <fmt:formatDate value="${rnl.strDate}" pattern="yyyy-MM-dd"/></p>
+				<p>모집 마감일 : <fmt:formatDate value="${rnl.endDate}" pattern="yyyy-MM-dd"/></p>
+				<p>채용구분 : ${rnl.recruitDivisionValue}</p>
 			</div>
 		</div>
 		<div><!-- 내용 -->

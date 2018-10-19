@@ -10,15 +10,15 @@
 				<th>No.</th>
 				<th>제목</th>
 				<th>모집기간</th>
-				<th>구분</th>
+				<th>채용구분</th>
 				<th>지원자 수</th>
 			</tr>
 			<c:forEach var="rnl" items="${recruitNoticeList}">
 				<tr>
 					<td>${rnl.id}</td>
 					<td><a href="detail?id=${rnl.id}">${rnl.title}</a></td>
-					<td><fmt:formatDate value="${rnl.strDate}" pattern="yyyy-MM-dd"/> - <fmt:formatDate value="${rnl.strDate}" pattern="yyyy-MM-dd"/></td>
-					<td>??</td>
+					<td><fmt:formatDate value="${rnl.strDate}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${rnl.endDate}" pattern="yyyy-MM-dd"/></td>
+					<td>${rnl.recruitDivisionValue}</td>
 					<td>???</td>
 				</tr>				
 			</c:forEach>

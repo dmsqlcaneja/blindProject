@@ -9,10 +9,10 @@
 			<li>
 				<!-- Company 테이블에서 가져오기 -->
 				<label>회사명</label>
-				<select>
+				<select name="companyId">
 					<option>선택</option>
 					<c:forEach var="company" items="${companyList}">
-						<option>${company.name}</option>
+						<option value="${company.id}">${company.name}</option>
 					</c:forEach>
 				</select>
 			</li>
@@ -32,10 +32,10 @@
 			<li>
 				<!-- Recruit_Division 테이블에서 가져오기 -->
 				<label>채용 구분</label>
-				<select>
+				<select name="recruitDivisionId">
 					<option>선택</option>
 					<c:forEach var="rdl" items="${recruitDivisionList}">
-						<option>${rdl.value}</option>
+						<option value="${rdl.id}">${rdl.value}</option>
 					</c:forEach>
 				</select>
 			</li>
