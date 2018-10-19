@@ -35,7 +35,7 @@
 			 A.end_date as endDate,
 			 B.value as employDivsionName
 		from Recruit_Notice A
-		 left outer join Recruit_Division B on A.Employ_Division = B.id
+		 left outer join Recruit_Division B on A.recruit_division_id = B.id
 	</select>
 	
 </mapper>
