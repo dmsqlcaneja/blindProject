@@ -37,7 +37,7 @@ public class MemberController {
 		model.addAttribute("recruitNoticeList", recruitNotice);			
 	
 		
-		List<RecruitDivision> recruitDivision = recruitDivisionDao.getList();		
+		List<RecruitDivision> recruitDivision = recruitDivisionDao.getRecruitDivisionList();		
 		model.addAttribute("recruitDivisionList", recruitDivision);			
 		
 		return "member.RecruitNotice";

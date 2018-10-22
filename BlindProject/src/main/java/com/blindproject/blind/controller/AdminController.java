@@ -46,8 +46,8 @@ public class AdminController {
 	@GetMapping("notice/insert")
 	public String NoticeInsert(Model model) {
 		
-		List<Company> company = companyDao.getList();
-		List<RecruitDivision> recruitDivision = recruitDivisionDao.getList();
+		List<Company> company = companyDao.getCompanyList();
+		List<RecruitDivision> recruitDivision = recruitDivisionDao.getRecruitDivisionList();
 		List<Type> type = typeDao.getList();
 		
 		

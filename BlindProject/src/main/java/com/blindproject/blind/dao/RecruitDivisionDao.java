@@ -8,6 +8,6 @@ public interface RecruitDivisionDao {
 
 	RecruitDivision get(Integer id);
 	
-	List<RecruitDivision> getList();
+	List<RecruitDivision> getRecruitDivisionList();
 	
 }

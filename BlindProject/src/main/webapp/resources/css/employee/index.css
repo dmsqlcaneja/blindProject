@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/*----- reset -----*/
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+main{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+li{
+	list-style: none;
+}
+
+input{
+	margin: 0px;
+	padding: 0px;
+}
+
+.hidden{
+	display: none;
+}
+
+/*----- style -----*/
+#main{
+	width: 100%;
+	height: 100%;
+	margin: auto auto;
+}
+
+#section{
+	display: inline-block;
+}
+
+.rn-table{
+	border: 1px solid black;
+	text-align: center;
+}
+
+.rn-items{
+	border: 1px solid red;
+}
+
+.rn-items-l{
+	border: 1px solid red;
+	width: 400px;
+}
+
+/*----- search -----*/
+.search-bar{
+	display: inline-block;
+	border: 1px solid red;
+}
+
+
+
+
+/*----- button -----*/
+.add-btn{
+	width: 50px;
+	height: 30px;
+	background: pink;
+	position: relative;
+	right: 0px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -31,7 +31,7 @@
 			rn.writer_id,
 			rn.str_date as strDate,
 			rn.end_date as endDate,
-			c.name as cName,
+			c.name as companyName,
 			rd.value as recruitDivisionValue
 		From Recruit_Notice rn 
 		left JOIN Company c
@@ -50,13 +50,14 @@
 			rn.writer_id,
 			rn.str_date as strDate,
 			rn.end_date as endDate,
-			c.name,
+			c.name as companyName,
 			rd.value as recruitDivisionValue
 		From Recruit_Notice rn 
 		left JOIN Company c
 		ON rn.company_id = c.id
 		left JOIN Recruit_Division rd
 		ON rn.recruit_division_id = rd.id
+		ORDER BY rn.id desc;
 	</select>
 	
 

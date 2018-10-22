@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*----- reset -----*/
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+main{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+li{
+	list-style: none;
+}
+
+input{
+	margin: 0px;
+	padding: 0px;
+}
+
+.hidden{
+	display: none;
+}
+
+/*----- style -----*/
+#main{
+	width: 100%;
+	height: 100%;
+}
+
+#section{
+	margin: 10% 25%;
+}
+
+	.btn-list{
+		display: flex;
+	}
+	
+		.btn-items{
+			width: 200px;
+			height: 200px;
+			margin-left: 10px;
+		}
+		
+		.btn-items:first-child{
+			margin-left: 0px;
+		}
+
+/*----- button -----*/
+.btn{
+	width: 200px;
+	height: 200px;
+	border: none;
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+}
+
+
+
+
+
+

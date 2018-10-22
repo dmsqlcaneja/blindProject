@@ -25,7 +25,7 @@
     <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
   </definition>   
   
-   <definition name="employee.*" template="/WEB-INF/views/inc/layout.jsp">
+   <definition name="employee.*" template="/WEB-INF/views/employee/inc/layout.jsp">
     <put-attribute name="title" value="Tiles tutorial homepage" />
     <put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
     <put-attribute name="main" value="/WEB-INF/views/employee/{1}.jsp" />

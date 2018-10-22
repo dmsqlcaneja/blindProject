@@ -8,6 +8,6 @@ public interface CompanyDao {
 
 	Company get(Integer id);
 	
-	List<Company> getList();
+	List<Company> getCompanyList();
 	
 }

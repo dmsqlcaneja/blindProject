@@ -9,7 +9,7 @@
 		where id = #{param1}
 	</select>
 	
-	<select id="getList" resultType="com.blindproject.blind.entity.RecruitDivision">
+	<select id="getRecruitDivisionList" resultType="com.blindproject.blind.entity.RecruitDivision">
 		select * from Recruit_Division as RecruitDivision
 	</select>
 	

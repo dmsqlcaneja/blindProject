@@ -25,11 +25,11 @@ public class MybatisRecruitDivisionDao implements RecruitDivisionDao {
 	}
 
 	@Override
-	public List<RecruitDivision> getList() {
+	public List<RecruitDivision> getRecruitDivisionList() {
 
 		RecruitDivisionDao recruitDivisionDao = sqlSession.getMapper(RecruitDivisionDao.class);
 
-		return recruitDivisionDao.getList();
+		return recruitDivisionDao.getRecruitDivisionList();
 	}
 
 }

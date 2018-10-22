@@ -24,11 +24,11 @@ public class MybatisCompanyDao implements CompanyDao {
 	}
 
 	@Override
-	public List<Company> getList() {
+	public List<Company> getCompanyList() {
 		
 		CompanyDao companyDao = sqlSession.getMapper(CompanyDao.class);
 		
-		return companyDao.getList();
+		return companyDao.getCompanyList();
 	}
 
 }
