@@ -1,19 +1,19 @@
 package com.blindproject.blind.entity;
 
-//전형구분(진행중, 완료) 
+//전형구분(진행중, 완료)
 public class Type {
 
 	// 아이디
-	private Integer id;
+	private int id;
 
-	// 값
+	// 값(진행중, 완료)
 	private String value;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -25,21 +25,14 @@ public class Type {
 		this.value = value;
 	}
 
-	// Type 모델 복사
-	public void CopyData(Type param) {
-		this.id = param.getId();
-		this.value = param.getValue();
-	}
-
 	public Type() {
 		super();
 	}
 
-	public Type(Integer id, String value) {
+	public Type(int id, String value) {
 		super();
 		this.id = id;
 		this.value = value;
 	}
-	
-	
+
 }

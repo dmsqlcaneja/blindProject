@@ -17,15 +17,15 @@ public class MybatisEmployeeService {
 	@Autowired
 	private EmployeeDao sinEmployeeDao;
 	
-	public Company getCompany(Integer id) {
+	public Company getCompany(int id) {
 		
-		return companyDao.get(id);
+		return companyDao.getCompany(id);
 	}
 	
 	//회원가입
 	public int insertEmployee(Employee sinEmployee) {
 		
-		int result = sinEmployeeDao.insert(sinEmployee);
+		int result = sinEmployeeDao.insertEmployee(sinEmployee);
 		
 		return result;
 	}

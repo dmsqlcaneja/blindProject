@@ -1,19 +1,19 @@
 package com.blindproject.blind.entity;
 
-//회사 
+//회사명
 public class Company {
 
 	// 아이디
-	private Integer id;
+	private int id;
 
 	// 회사명
 	private String name;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -25,20 +25,14 @@ public class Company {
 		this.name = name;
 	}
 
-	// Company 모델 복사
-	public void CopyData(Company param) {
-		this.id = param.getId();
-		this.name = param.getName();
-	}
-
 	public Company() {
 		super();
 	}
 
-	public Company(Integer id, String name) {
+	public Company(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
-	
+
 }

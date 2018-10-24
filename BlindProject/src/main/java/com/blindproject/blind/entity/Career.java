@@ -1,81 +1,100 @@
 package com.blindproject.blind.entity;
 
-//경력사항 
+import java.util.Date;
+
+//경력사항
 public class Career {
 
-	// 아이디
-	private Integer id;
+	//아이디
+	private int id;
 
-	// 주요담당업무1
-	private String importantTask1;
+	//이전 회사명
+	private String preCompany;
+	
+	//직위
+	private String position;
+	
+	//입사일
+	private Date strDate;
+	
+	//퇴사일
+	private Date endDate;
+	
+	//담당 업무
+	private String task;
+	
+	//이력서 아이디
+	private int resumeId;
 
-	// 주요담당업무2
-	private String importantTask2;
-
-	// 주요업적
-	private String importantAchievements;
-
-	// 연간급여
-	private String ySalary;
-
-	// 개인정보아이디
-	private Integer personalInfoId;
-
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getImportantTask1() {
-		return importantTask1;
+	public String getPreCompany() {
+		return preCompany;
 	}
 
-	public void setImportantTask1(String importantTask1) {
-		this.importantTask1 = importantTask1;
+	public void setPreCompany(String preCompany) {
+		this.preCompany = preCompany;
 	}
 
-	public String getImportantTask2() {
-		return importantTask2;
+	public String getPosition() {
+		return position;
 	}
 
-	public void setImportantTask2(String importantTask2) {
-		this.importantTask2 = importantTask2;
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
-	public String getImportantAchievements() {
-		return importantAchievements;
+	public Date getStrDate() {
+		return strDate;
 	}
 
-	public void setImportantAchievements(String importantAchievements) {
-		this.importantAchievements = importantAchievements;
+	public void setStrDate(Date strDate) {
+		this.strDate = strDate;
 	}
 
-	public String getYSalary() {
-		return ySalary;
+	public Date getEndDate() {
+		return endDate;
 	}
 
-	public void setYSalary(String ySalary) {
-		this.ySalary = ySalary;
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
-	public Integer getPersonalInfoId() {
-		return personalInfoId;
+	public String getTask() {
+		return task;
 	}
 
-	public void setPersonalInfoId(Integer personalInfoId) {
-		this.personalInfoId = personalInfoId;
+	public void setTask(String task) {
+		this.task = task;
 	}
 
-	// Career 모델 복사
-	public void CopyData(Career param) {
-		this.id = param.getId();
-		this.importantTask1 = param.getImportantTask1();
-		this.importantTask2 = param.getImportantTask2();
-		this.importantAchievements = param.getImportantAchievements();
-		this.ySalary = param.getYSalary();
-		this.personalInfoId = param.getPersonalInfoId();
+	public int getResumeId() {
+		return resumeId;
 	}
+
+	public void setResumeId(int resumeId) {
+		this.resumeId = resumeId;
+	}
+
+	public Career() {
+		super();
+	}
+
+	public Career(int id, String preCompany, String position, Date strDate, Date endDate, String task, int resumeId) {
+		super();
+		this.id = id;
+		this.preCompany = preCompany;
+		this.position = position;
+		this.strDate = strDate;
+		this.endDate = endDate;
+		this.task = task;
+		this.resumeId = resumeId;
+	}
+	
 }

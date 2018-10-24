@@ -13,15 +13,15 @@ public interface RecruitNoticeService {
 
 	public int updateRecruitNotice(RecruitNotice recruitNotice);
 
-	public int delete(Integer id);
+	public int deleteRecruitNotice(int id);
 
-	public RecruitNotice get(Integer id);
+	public RecruitNotice getRecruitNotice(int id);
 
-	public List<RecruitNotice> getList();
+	public List<RecruitNotice> getRecruitNoticeList();
 
-	public List<RecruitNotice> getList(String field);
+	public List<RecruitNotice> getRecruitNoticeList(String field);
 
-	public List<RecruitNotice> getList(String field, String query, int page);
+	public List<RecruitNotice> getRecruitNoticeList(String field, String query, int page);
 	
 	//회사명
 	public List<Company> getCompanyList();

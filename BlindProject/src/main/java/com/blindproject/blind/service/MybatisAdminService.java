@@ -16,7 +16,7 @@ public class MybatisAdminService implements AdminService {
 	
 	public int insertNotice(Notice notice) {
 		// TODO Auto-generated method stub
-		return noticeDao.insert(notice);
+		return noticeDao.insertNotice(notice);
 	}
 	
 	

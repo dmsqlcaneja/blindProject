@@ -4,6 +4,6 @@ import com.blindproject.blind.entity.Notice;
 
 public interface NoticeDao {
 
-	int insert(Notice notice);
+	int insertNotice(Notice notice);
 
 }

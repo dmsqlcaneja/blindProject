@@ -10,14 +10,14 @@ public interface RecruitNoticeDao {
 
 	public int updateRecruitNotice(RecruitNotice recruitNotice);
 	
-	int delete(Integer id);
+	public int deleteRecruitNotice(int id);
 	
-	RecruitNotice get(Integer id);
+	RecruitNotice getRecruitNotice(int id);
 	
-	List<RecruitNotice> getList();
+	List<RecruitNotice> getRecruitNoticeList();
 	
-	List<RecruitNotice> getList(String field);
+	List<RecruitNotice> getRecruitNoticeList(String field);
 	
-	List<RecruitNotice> getList(String field, String query, int page);
+	List<RecruitNotice> getRecruitNoticeList(String field, String query, int page);
 
 }

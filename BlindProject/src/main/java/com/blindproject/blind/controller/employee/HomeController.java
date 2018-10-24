@@ -20,53 +20,30 @@ public class HomeController {
 
 	@Autowired
 	private CompanyDao companyDao;
-	
+
 	@Autowired
 	private RecruitNoticeService recruitNoticeService;
-	
+
 	@GetMapping("index")
 	public String index(Model model) {
-		
-		//채용공고 가져오기
-		List<RecruitNotice> recruitNoticeList = recruitNoticeService.getList();
-		
+
+		// 채용공고 가져오기
+		List<RecruitNotice> recruitNoticeList = recruitNoticeService.getRecruitNoticeList();
+
 		model.addAttribute("recruitNoticeList", recruitNoticeList);
-		
+
 		return "employee.index";
 	}
-	
-	
-	
-	//채용공고 상세 페이지
-	@GetMapping("detail")
-	public String detail(Model model
-			, @RequestParam("id") Integer id) {
 
-		RecruitNotice notice = recruitNoticeService.get(id);
-		
+	// 채용공고 상세 페이지
+	@GetMapping("detail")
+	public String detail(Model model, @RequestParam("id") int id) {
+
+		RecruitNotice notice = recruitNoticeService.getRecruitNotice(id);
+
 		model.addAttribute("rnl", notice);
-		
+
 		return "employee.detail";
 	}
-	
-	
-	
-	//로그인, 회원가입 페이지
-	@GetMapping("login")
-	public String login() {
-		
-		return "employee.login";
-	}
-	
-	@GetMapping("join")
-	public String join(Model model) {
-		
-		//회사명 가져오기
-		List<Company> company = companyDao.getCompanyList();
-		
-		model.addAttribute("companyList", company);
 
-		return "employee.join";
-	}
-	
 }

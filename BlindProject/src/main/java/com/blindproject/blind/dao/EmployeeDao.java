@@ -4,8 +4,8 @@ import com.blindproject.blind.entity.Employee;
 
 public interface EmployeeDao {
 	
-	Employee get(Integer id);
+	Employee getEmployee(int id);
 
-	int insert(Employee employee);
+	int insertEmployee(Employee employee);
 	
 }

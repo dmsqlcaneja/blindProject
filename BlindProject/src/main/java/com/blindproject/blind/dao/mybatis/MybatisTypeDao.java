@@ -16,19 +16,19 @@ public class MybatisTypeDao implements TypeDao {
 	private SqlSession sqlSession;
 	
 	@Override
-	public Type get(Integer id) {
+	public Type getType(int id) {
 		
 		TypeDao typeDao = sqlSession.getMapper(TypeDao.class);
 		
-		return typeDao.get(id);
+		return typeDao.getType(id);
 	}
 	
 	@Override
-	public List<Type> getList() {
+	public List<Type> getTypeList() {
 		
 		TypeDao typeDao = sqlSession.getMapper(TypeDao.class);
 		
-		return typeDao.getList();
+		return typeDao.getTypeList();
 	}
 
 }

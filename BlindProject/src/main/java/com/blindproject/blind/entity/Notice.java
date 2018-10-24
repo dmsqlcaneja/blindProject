@@ -1,37 +1,33 @@
 package com.blindproject.blind.entity;
 
-//공지사항 
+import java.util.Date;
+
+//공지사항
 public class Notice {
 
-	// 아이디
-	private Integer id;
+	//아이디
+	private int id;
 
-	// 제목
+	//제목
 	private String title;
 
-	// 등록일
-	private String regDate;
+	//등록일
+	private Date regDate;
 
-	// 전형아이디
-	private Integer typeId;
-
-	// 회사아이디
-	private Integer companyId;
-
-	// 채용구분
-	private Integer recruitDivisionId;
-
-	// 작성자
-	private Integer writer;
-
-	// 내용
+	//내용
 	private String contents;
 
-	public Integer getId() {
+	//작성자 아이디(admin id)
+	private int writerId;
+
+	//전형구분(진행중, 완료)
+	private int typeId;
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -43,44 +39,12 @@ public class Notice {
 		this.title = title;
 	}
 
-	public String getRegDate() {
+	public Date getRegDate() {
 		return regDate;
 	}
 
-	public void setRegDate(String regDate) {
+	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
-	}
-
-	public Integer getTypeId() {
-		return typeId;
-	}
-
-	public void setTypeId(Integer typeId) {
-		this.typeId = typeId;
-	}
-
-	public Integer getCompanyId() {
-		return companyId;
-	}
-
-	public void setCompanyId(Integer companyId) {
-		this.companyId = companyId;
-	}
-
-	public Integer getRecruitDivisionId() {
-		return recruitDivisionId;
-	}
-
-	public void setRecruitDivisionId(Integer recruitDivisionId) {
-		this.recruitDivisionId = recruitDivisionId;
-	}
-
-	public Integer getWriter() {
-		return writer;
-	}
-
-	public void setWriter(Integer writer) {
-		this.writer = writer;
 	}
 
 	public String getContents() {
@@ -91,15 +55,34 @@ public class Notice {
 		this.contents = contents;
 	}
 
-	// Notice 모델 복사
-	public void CopyData(Notice param) {
-		this.id = param.getId();
-		this.title = param.getTitle();
-		this.regDate = param.getRegDate();
-		this.typeId = param.getTypeId();
-		this.companyId = param.getCompanyId();
-		this.recruitDivisionId = param.getRecruitDivisionId();
-		this.writer = param.getWriter();
-		this.contents = param.getContents();
+	public int getWriterId() {
+		return writerId;
 	}
+
+	public void setWriterId(int writerId) {
+		this.writerId = writerId;
+	}
+
+	public int getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(int typeId) {
+		this.typeId = typeId;
+	}
+
+	public Notice() {
+		super();
+	}
+
+	public Notice(int id, String title, Date regDate, String contents, int writerId, int typeId) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.regDate = regDate;
+		this.contents = contents;
+		this.writerId = writerId;
+		this.typeId = typeId;
+	}
+
 }

@@ -2,11 +2,11 @@ package com.blindproject.blind.entity;
 
 import java.util.Date;
 
-//채용공고 
+//채용 공고
 public class RecruitNotice {
 
 	// 아이디
-	private Integer id;
+	private int td;
 
 	// 제목
 	private String title;
@@ -14,37 +14,33 @@ public class RecruitNotice {
 	// 내용
 	private String contents;
 
-	// 작성일
+	// 등록일
 	private Date regDate;
 
-	// 작성자
-	private Integer writerId;
-
-	// 모집시작일
+	// 모집 시작일
 	private Date strDate;
 
-	// 모집종료일
+	// 모집 종료일
 	private Date endDate;
 
-	// 채용구분
-	private Integer recruitDivisionId;
+	// 채용구분 아이디(인턴, 계약직, 정규직)
+	private int recruitDivisionId;
 
-	// 회사명
-	private Integer companyId;
-	
-	
-	//조인 컬럼--------------
-	private String recruitDivisionValue;
-	
-	private String companyName;
-	
+	// 작성자 아이디(Employee Id)
+	private int writerId;
 
-	public Integer getId() {
-		return id;
+	// 전형구분 아이디
+	private int typeId;
+
+	// 회사명 아이디
+	private int companyId;
+
+	public int getTd() {
+		return td;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setTd(int td) {
+		this.td = td;
 	}
 
 	public String getTitle() {
@@ -71,14 +67,6 @@ public class RecruitNotice {
 		this.regDate = regDate;
 	}
 
-	public Integer getWriterId() {
-		return writerId;
-	}
-
-	public void setWriterId(Integer writerId) {
-		this.writerId = writerId;
-	}
-
 	public Date getStrDate() {
 		return strDate;
 	}
@@ -95,73 +83,55 @@ public class RecruitNotice {
 		this.endDate = endDate;
 	}
 
-	public Integer getRecruitDivisionId() {
+	public int getRecruitDivisionId() {
 		return recruitDivisionId;
 	}
 
-	public void setRecruitDivisionId(Integer recruitDivisionId) {
+	public void setRecruitDivisionId(int recruitDivisionId) {
 		this.recruitDivisionId = recruitDivisionId;
 	}
 
-	public Integer getCompanyId() {
+	public int getWriterId() {
+		return writerId;
+	}
+
+	public void setWriterId(int writerId) {
+		this.writerId = writerId;
+	}
+
+	public int getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(int typeId) {
+		this.typeId = typeId;
+	}
+
+	public int getCompanyId() {
 		return companyId;
 	}
 
-	public void setCompanyId(Integer companyId) {
+	public void setCompanyId(int companyId) {
 		this.companyId = companyId;
-	}
-	
-	//조인 컬럼--------------
-	public String getRecruitDivisionValue() {
-		return recruitDivisionValue;
-	}
-
-	public void setRecruitDivisionValue(String recruitDivisionValue) {
-		this.recruitDivisionValue = recruitDivisionValue;
-	}
-	
-	public String getCompanyName() {
-		return companyName;
-	}
-
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-
-	// RecruitNotice 모델 복사
-	public void CopyData(RecruitNotice param) {
-		this.id = param.getId();
-		this.title = param.getTitle();
-		this.contents = param.getContents();
-		this.regDate = param.getRegDate();
-		this.writerId = param.getWriterId();
-		this.strDate = param.getStrDate();
-		this.endDate = param.getEndDate();
-		this.recruitDivisionId = param.getRecruitDivisionId();
-		this.companyId = param.getCompanyId();
-		this.recruitDivisionValue = param.getRecruitDivisionValue();
-		this.companyName = param.getCompanyName();
 	}
 
 	public RecruitNotice() {
 		super();
 	}
 
-	public RecruitNotice(Integer id, String title, String contents, Date regDate, Integer writerId, Date strDate,
-			Date endDate, Integer recruitDivisionId, Integer companyId, String recruitDivisionValue,
-			String companyName) {
+	public RecruitNotice(int td, String title, String contents, Date regDate, Date strDate, Date endDate,
+			int recruitDivisionId, int writerId, int typeId, int companyId) {
 		super();
-		this.id = id;
+		this.td = td;
 		this.title = title;
 		this.contents = contents;
 		this.regDate = regDate;
-		this.writerId = writerId;
 		this.strDate = strDate;
 		this.endDate = endDate;
 		this.recruitDivisionId = recruitDivisionId;
+		this.writerId = writerId;
+		this.typeId = typeId;
 		this.companyId = companyId;
-		this.recruitDivisionValue = recruitDivisionValue;
-		this.companyName = companyName;
 	}
 
 }

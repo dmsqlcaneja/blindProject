@@ -7,8 +7,8 @@ import com.blindproject.blind.entity.Type;
 
 public interface TypeDao {
 	
-	Type get(Integer id);
+	Type getType(int id);
 	
-	List<Type> getList();
+	List<Type> getTypeList();
 
 }

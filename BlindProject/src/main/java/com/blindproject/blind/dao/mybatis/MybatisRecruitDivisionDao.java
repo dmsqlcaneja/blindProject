@@ -16,11 +16,11 @@ public class MybatisRecruitDivisionDao implements RecruitDivisionDao {
 	private SqlSession sqlSession;
 
 	@Override
-	public RecruitDivision get(Integer id) {
+	public RecruitDivision getRecruitDivision(int id) {
 
 		RecruitDivisionDao recruitDivisionDao = sqlSession.getMapper(RecruitDivisionDao.class);
 
-		return recruitDivisionDao.get(id);
+		return recruitDivisionDao.getRecruitDivision(id);
 
 	}
 

@@ -16,11 +16,11 @@ public class MybatisCompanyDao implements CompanyDao {
 	private SqlSession sqlSession;
 	
 	@Override
-	public Company get(Integer id) {
+	public Company getCompany(int id) {
 		
 		CompanyDao companyDao = sqlSession.getMapper(CompanyDao.class);
 		
-		return companyDao.get(id);
+		return companyDao.getCompany(id);
 	}
 
 	@Override

@@ -33,7 +33,7 @@ public class MemberController {
 	@GetMapping("RecruitNotice")
 	public String home(Model model) {
 		
-		List<RecruitNotice> recruitNotice = recruitNoticeDao.getList();		
+		List<RecruitNotice> recruitNotice = recruitNoticeDao.getRecruitNoticeList();		
 		model.addAttribute("recruitNoticeList", recruitNotice);			
 	
 		

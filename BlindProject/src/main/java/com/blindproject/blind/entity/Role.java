@@ -1,12 +1,12 @@
 package com.blindproject.blind.entity;
 
-//Role 
+//권한 설정
 public class Role {
 
-	// name
+	// 권한명
 	private String name;
 
-	// description
+	// ???????????
 	private String description;
 
 	public String getName() {
@@ -25,9 +25,14 @@ public class Role {
 		this.description = description;
 	}
 
-	// Role 모델 복사
-	public void CopyData(Role param) {
-		this.name = param.getName();
-		this.description = param.getDescription();
+	public Role() {
+		super();
 	}
+
+	public Role(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+
 }

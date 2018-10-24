@@ -5,7 +5,7 @@
   
 <mapper namespace="com.blindproject.blind.dao.CompanyDao">
 	
-	<select id="get" resultType="com.blindproject.blind.entity.Company">
+	<select id="getCompany" resultType="com.blindproject.blind.entity.Company">
 		select * from Company
 		where id = #{param1}
 	</select>

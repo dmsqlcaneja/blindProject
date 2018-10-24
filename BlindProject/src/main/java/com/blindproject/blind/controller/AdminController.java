@@ -48,7 +48,7 @@ public class AdminController {
 		
 		List<Company> company = companyDao.getCompanyList();
 		List<RecruitDivision> recruitDivision = recruitDivisionDao.getRecruitDivisionList();
-		List<Type> type = typeDao.getList();
+		List<Type> type = typeDao.getTypeList();
 		
 		
 		

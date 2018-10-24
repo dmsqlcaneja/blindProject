@@ -33,44 +33,44 @@ public class MybatisRecruitNoticeDao implements RecruitNoticeDao {
 	}
 
 	@Override
-	public int delete(Integer id) {
+	public int deleteRecruitNotice(int id) {
 		
 		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
 		
-		return recruitNoticeDao.delete(id);
+		return recruitNoticeDao.deleteRecruitNotice(id);
 	}
 	
 	@Override
-	public RecruitNotice get(Integer id) {
+	public RecruitNotice getRecruitNotice(int id) {
 		
 		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
 		
-		return recruitNoticeDao.get(id);
-	}
-
-	@Override
-	public List<RecruitNotice> getList() {
-	
-		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
-		
-		return recruitNoticeDao.getList("id", "", 1);
+		return recruitNoticeDao.getRecruitNotice(id);
 	}
 
+	@Override
+	public List<RecruitNotice> getRecruitNoticeList() {
+	
+		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
+		
+		return recruitNoticeDao.getRecruitNoticeList("id", "", 1);
+	}
+
 	
 	@Override
-	public List<RecruitNotice> getList(String field) {
+	public List<RecruitNotice> getRecruitNoticeList(String field) {
 		
 		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
 		
-		return recruitNoticeDao.getList(field, "", 1);
+		return recruitNoticeDao.getRecruitNoticeList(field, "", 1);
 	}
 	
 	@Override
-	public List<RecruitNotice> getList(String field, String query, int page) {
+	public List<RecruitNotice> getRecruitNoticeList(String field, String query, int page) {
 		
 		RecruitNoticeDao recruitNoticeDao = sqlSession.getMapper(RecruitNoticeDao.class);
 		
-		return recruitNoticeDao.getList(field, query, page);
+		return recruitNoticeDao.getRecruitNoticeList(field, query, page);
 	}
 
 }

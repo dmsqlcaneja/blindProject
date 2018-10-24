@@ -1,43 +1,38 @@
 package com.blindproject.blind.entity;
 
-//직원 정보 
+//채용 담당자 정보
 public class Employee {
 
-	// 사원번호
-	private Integer id;
+	//아이디
+	private int id;
 
-	// 회사선택
-	private Integer companyId;
-
-	// 아이디
+	//로그인 아이디
 	private String loginId;
 
-	// 비밀번호
+	//비밀번호
 	private String pwd;
 
-	// 이메일
+	//이메일
 	private String email;
 
-	// 전화번호
+	//휴대전화
 	private String phoneNumber;
 
-	// 이름
+	//이름
 	private String name;
 
-	public Integer getId() {
+	//회사 아이디
+	private int companyId;
+
+	//권한
+	private String roleName;
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Integer getCompanyId() {
-		return companyId;
-	}
-
-	public void setCompanyId(Integer companyId) {
-		this.companyId = companyId;
 	}
 
 	public String getLoginId() {
@@ -80,31 +75,37 @@ public class Employee {
 		this.name = name;
 	}
 
-	// Employee 모델 복사
-	public void CopyData(Employee param) {
-		this.id = param.getId();
-		this.companyId = param.getCompanyId();
-		this.loginId = param.getLoginId();
-		this.pwd = param.getPwd();
-		this.email = param.getEmail();
-		this.phoneNumber = param.getPhoneNumber();
-		this.name = param.getName();
+	public int getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(int companyId) {
+		this.companyId = companyId;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
 	public Employee() {
 		super();
 	}
 
-	public Employee(Integer id, Integer companyId, String loginId, String pwd, String email, String phoneNumber,
-			String name) {
+	public Employee(int id, String loginId, String pwd, String email, String phoneNumber, String name, int companyId,
+			String roleName) {
 		super();
 		this.id = id;
-		this.companyId = companyId;
 		this.loginId = loginId;
 		this.pwd = pwd;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.name = name;
+		this.companyId = companyId;
+		this.roleName = roleName;
 	}
-	
+
 }

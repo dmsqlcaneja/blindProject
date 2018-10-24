@@ -14,19 +14,19 @@ public class MybatisEmployeeDao implements EmployeeDao {
 	private SqlSession sqlSession;
 	
 	@Override
-	public Employee get(Integer id) {
+	public Employee getEmployee(int id) {
 		
 		EmployeeDao employeeDao = sqlSession.getMapper(EmployeeDao.class);
 		
-		return employeeDao.get(id);
+		return employeeDao.getEmployee(id);
 	}
 
 	@Override
-	public int insert(Employee employee) {
+	public int insertEmployee(Employee employee) {
 		
 		EmployeeDao employeeDao = sqlSession.getMapper(EmployeeDao.class);
 		
-		return employeeDao.insert(employee);
+		return employeeDao.insertEmployee(employee);
 	}
 
 }

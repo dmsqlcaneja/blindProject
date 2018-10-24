@@ -37,33 +37,33 @@ public class MybatisRecruitNoticeService implements RecruitNoticeService {
 	}
 
 	@Override
-	public int delete(Integer id) {
+	public int deleteRecruitNotice(int id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public RecruitNotice get(Integer id) {
+	public RecruitNotice getRecruitNotice(int id) {
 		
-		return recruitNoticeDao.get(id);
+		return recruitNoticeDao.getRecruitNotice(id);
 	}
 
 	@Override
-	public List<RecruitNotice> getList() {
+	public List<RecruitNotice> getRecruitNoticeList() {
 		
-		return recruitNoticeDao.getList("id", "", 1);
+		return recruitNoticeDao.getRecruitNoticeList("id", "", 1);
 	}
 
 	@Override
-	public List<RecruitNotice> getList(String field) {
+	public List<RecruitNotice> getRecruitNoticeList(String field) {
 		
-		return recruitNoticeDao.getList(field, "", 1);
+		return recruitNoticeDao.getRecruitNoticeList(field, "", 1);
 	}
 
 	@Override
-	public List<RecruitNotice> getList(String field, String query, int page) {
+	public List<RecruitNotice> getRecruitNoticeList(String field, String query, int page) {
 		
-		return recruitNoticeDao.getList(field, query, page);
+		return recruitNoticeDao.getRecruitNoticeList(field, query, page);
 	}
 
 	@Override

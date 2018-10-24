@@ -14,11 +14,11 @@ public class MybatisNoticeDao implements NoticeDao{
 	private SqlSession sqlSession;
 	
 	@Override
-	public int insert(Notice notice) {
+	public int insertNotice(Notice notice) {
 		
 		NoticeDao noticeDao = sqlSession.getMapper(NoticeDao.class);
 		
-		return noticeDao.insert(notice);
+		return noticeDao.insertNotice(notice);
 	}
 
 }

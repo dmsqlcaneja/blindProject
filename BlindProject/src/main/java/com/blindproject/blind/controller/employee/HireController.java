@@ -53,10 +53,10 @@ public class HireController {
 		recruitNotice.setStrDate(strDate);
 		recruitNotice.setEndDate(endDate);
 
-		Integer rdid = Integer.parseInt(request.getParameter("recruitDivisionId"));
+		int rdid = Integer.parseInt(request.getParameter("recruitDivisionId"));
 		recruitNotice.setRecruitDivisionId(rdid);
 
-		Integer cid = Integer.parseInt(request.getParameter("companyId"));
+		int cid = Integer.parseInt(request.getParameter("companyId"));
 		recruitNotice.setCompanyId(cid);
 
 		recruitNoticeService.insertRecruitNotice(recruitNotice);
@@ -67,9 +67,9 @@ public class HireController {
 	// 채용공고 수정 페이지
 	@GetMapping("edit")
 	public String edit(Model model, 
-			@RequestParam("id") Integer id) {
+			@RequestParam("id") int id) {
 
-		RecruitNotice notice = recruitNoticeService.get(id);
+		RecruitNotice notice = recruitNoticeService.getRecruitNotice(id);
 
 		model.addAttribute("rnl", notice);
 
@@ -86,9 +86,9 @@ public class HireController {
 
 	@PostMapping("edit")
 	public String edit(HttpServletRequest request, 
-			@RequestParam("id") Integer id) throws ParseException {
+			@RequestParam("id") int id) throws ParseException {
 
-		RecruitNotice recruitNotice = recruitNoticeService.get(id);
+		RecruitNotice recruitNotice = recruitNoticeService.getRecruitNotice(id);
 		recruitNotice.setTitle(request.getParameter("title"));
 		recruitNotice.setContents(request.getParameter("contents"));
 
