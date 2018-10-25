@@ -1,5 +1,7 @@
 package com.blindproject.blind.dao;
 
-public interface CareerDao {
+import com.blindproject.blind.entity.Career;
 
+public interface CareerDao {
+	int insertCareer(Career career);
 }

@@ -2,7 +2,7 @@ package com.blindproject.blind.entity;
 
 //이력서
 public class Resume {
-
+	
 	// 아이디
 	private int id;
 
@@ -31,6 +31,8 @@ public class Resume {
 	private String phoneNumber;
 
 	// 지원 아이디(지원하는 행위에 대한 아이디)
+	private int applierId;
+	
 	private int applyId;
 
 	public int getId() {
@@ -105,6 +107,14 @@ public class Resume {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public int getApplierId() {
+		return applierId;
+	}
+
+	public void setApplierId(int applierId) {
+		this.applierId = applierId;
+	}
+
 	public int getApplyId() {
 		return applyId;
 	}
@@ -114,12 +124,10 @@ public class Resume {
 	}
 
 	public Resume() {
-		super();
 	}
 
 	public Resume(int id, String growth, String motivation, String ambition, String personality, String freeScript,
-			String address, String emergencyNumber, String phoneNumber, int applyId) {
-		super();
+			String address, String emergencyNumber, String phoneNumber, int applierId, int applyId) {
 		this.id = id;
 		this.growth = growth;
 		this.motivation = motivation;
@@ -129,7 +137,11 @@ public class Resume {
 		this.address = address;
 		this.emergencyNumber = emergencyNumber;
 		this.phoneNumber = phoneNumber;
+		this.applierId = applierId;
 		this.applyId = applyId;
 	}
 
+
+	
+	
 }
