@@ -26,7 +26,7 @@ public class MybatisEmployeeService {
 	public int insertEmployee(Employee sinEmployee) {
 		
 		int result = sinEmployeeDao.insertEmployee(sinEmployee);
-		
+
 		return result;
 	}
 }

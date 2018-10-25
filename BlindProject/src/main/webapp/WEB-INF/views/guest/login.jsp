@@ -18,7 +18,8 @@
 					</td>
 				</tr>
 				<tr>
-					<td><input type="submit" name="" value="로그인" /></td>
+					<td><input type="submit"  value="로그인" /></td>
+					<td><a href="/guest/signup">회원가입</a></td>
 				</tr>				
 			</table>
 		</form>

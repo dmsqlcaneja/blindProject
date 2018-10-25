@@ -5,30 +5,31 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.blindproject.blind.dao.AdminDao;
 import com.blindproject.blind.dao.EmployeeDao;
+import com.blindproject.blind.entity.Admin;
 import com.blindproject.blind.entity.Employee;
 
 @Repository
-public class MybatisEmployeeDao implements EmployeeDao {
+public class MybatisAdminDao implements AdminDao {
 
 	@Autowired
 	private SqlSession sqlSession;
 	
 	@Override
-	public Employee getEmployee(int id) {
+	public Admin getAdmin(int id) {
 		
-		EmployeeDao employeeDao = sqlSession.getMapper(EmployeeDao.class);
+		AdminDao adminDao = sqlSession.getMapper(AdminDao.class);
 		
-		return employeeDao.getEmployee(id);
+		return adminDao.getAdmin(id);
 	}
 
 	@Override
-	public int insertEmployee(Employee employee) {
+	public int insertAdmin(Admin admin) {
 		
-		EmployeeDao employeeDao = sqlSession.getMapper(EmployeeDao.class);
+		AdminDao adminDao = sqlSession.getMapper(AdminDao.class);
 		
-		return employeeDao.insertEmployee(employee);
-	}
-		
+		return adminDao.insertAdmin(admin);
+	}		
 
 }

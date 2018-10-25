@@ -6,14 +6,13 @@
 	
 	<select id="getEmployee" resultType="com.blindproject.blind.entity.Employee">
 		select * from Employee
-		where id = #{param1}
+		where id = #{id}
 	</select>
 	
-	
 	<insert id="insertEmployee" parameterType="com.blindproject.blind.entity.Employee">
-<!-- 		insert into Employee(id, companyId, loginId, pwd, email, phonNumber, name) -->
-<!-- 		values(#{id}, #{companyId}, #{loginId}, #{pwd}, #{email}, #{phonNumber}, #{name}) -->
-	</insert>
+ 		insert into Employee(loginId, companyId, pwd, email, phoneNumber, name, roleName)
+		values(#{loginId}, 1, #{pwd}, #{email}, #{phoneNumber}, #{name}, 'ROLE_EMPLOYEE')
+	</insert>	
 	
 	
 </mapper>
