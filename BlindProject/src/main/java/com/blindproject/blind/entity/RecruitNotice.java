@@ -6,7 +6,7 @@ import java.util.Date;
 public class RecruitNotice {
 
 	// 아이디
-	private int td;
+	private int id;
 
 	// 제목
 	private String title;
@@ -34,13 +34,20 @@ public class RecruitNotice {
 
 	// 회사명 아이디
 	private int companyId;
+	
+	//------------------------조인 컬럼
+	private String cName;
+	
+	private String rdValue;
+	
+	private String tValue;
 
-	public int getTd() {
-		return td;
+	public int getId() {
+		return id;
 	}
 
-	public void setTd(int td) {
-		this.td = td;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -114,15 +121,40 @@ public class RecruitNotice {
 	public void setCompanyId(int companyId) {
 		this.companyId = companyId;
 	}
+	
+	public String getcName() {
+		return cName;
+	}
+
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+
+	public String getRdValue() {
+		return rdValue;
+	}
+
+	public void setRdValue(String rdValue) {
+		this.rdValue = rdValue;
+	}
+
+	public String gettValue() {
+		return tValue;
+	}
+
+	public void settValue(String tValue) {
+		this.tValue = tValue;
+	}
 
 	public RecruitNotice() {
 		super();
 	}
 
-	public RecruitNotice(int td, String title, String contents, Date regDate, Date strDate, Date endDate,
-			int recruitDivisionId, int writerId, int typeId, int companyId) {
+	public RecruitNotice(int id, String title, String contents, Date regDate, Date strDate, Date endDate,
+			int recruitDivisionId, int writerId, int typeId, int companyId, String cName, String rdValue,
+			String tValue) {
 		super();
-		this.td = td;
+		this.id = id;
 		this.title = title;
 		this.contents = contents;
 		this.regDate = regDate;
@@ -132,6 +164,9 @@ public class RecruitNotice {
 		this.writerId = writerId;
 		this.typeId = typeId;
 		this.companyId = companyId;
+		this.cName = cName;
+		this.rdValue = rdValue;
+		this.tValue = tValue;
 	}
 
 }

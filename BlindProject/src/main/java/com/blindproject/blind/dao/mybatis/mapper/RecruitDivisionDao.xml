@@ -4,13 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.blindproject.blind.dao.RecruitDivisionDao">
 	
-	<select id="get" resultType="com.blindproject.blind.entity.RecruitDivision">
-		select * from Recruit_Division as RecruitDivision
+	<select id="getRecruitDivision" resultType="com.blindproject.blind.entity.RecruitDivision">
+		select * from RecruitDivision
 		where id = #{param1}
 	</select>
 	
 	<select id="getRecruitDivisionList" resultType="com.blindproject.blind.entity.RecruitDivision">
-		select * from Recruit_Division as RecruitDivision
+		select * from RecruitDivision
 	</select>
 	
 </mapper>

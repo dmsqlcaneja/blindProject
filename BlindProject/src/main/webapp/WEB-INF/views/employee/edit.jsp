@@ -10,25 +10,25 @@
 		<ul>
 			<li>
 				<!-- Company 테이블에서 가져오기 -->
-				<label>회사명${rnl.companyId}</label>
+				<label>회사명</label>
 				<select name="companyId" class="companyId">
-					<c:forEach var="company" items="${companyList}">
-						<option value="${company.id}"<c:if test="${company.name == rnl.companyName}">selected</c:if>>${company.name}</option>
+					<c:forEach var="cl" items="${companyList}">
+						<option value="${cl.id}"<c:if test="${cl.name == rn.cName}">selected</c:if>>${cl.name}</option>
 					</c:forEach>
 				</select>
 			</li>
 			<li>
 				<!-- Recruit_Notice에 입력 -->
 				<label>제목</label>
-				<input type="text" name="title" value="${rnl.title}"/>
+				<input type="text" name="title" value="${rn.title}"/>
 			</li>
 			<li>
 				<label>모집 시작일</label>
-				<input type="date" name="strDate" value="<fmt:formatDate value="${rnl.strDate}" type="date" pattern="yyyy-MM-dd" />" />
+				<input type="date" name="strDate" value="<fmt:formatDate value="${rn.strDate}" type="date" pattern="yyyy-MM-dd" />" />
 			</li>			
 			<li>
 				<label>모집 마감일</label>
-				<input type="date" name="endDate" value="<fmt:formatDate value="${rnl.endDate}" type="date" pattern="yyyy-MM-dd" />" />
+				<input type="date" name="endDate" value="<fmt:formatDate value="${rn.endDate}" type="date" pattern="yyyy-MM-dd" />" />
 			</li>
 			<li>
 				<!-- Recruit_Division 테이블에서 가져오기 -->
@@ -36,13 +36,22 @@
 				<select name="recruitDivisionId">
 					<option>선택</option>
 					<c:forEach var="rdl" items="${recruitDivisionList}">
-						<option value="${rdl.id}"<c:if test="${rdl.value == rnl.recruitDivisionValue}">selected</c:if>>${rdl.value}</option>
+						<option value="${rdl.id}"<c:if test="${rdl.value == rn.rdValue}">selected</c:if>>${rdl.value}</option>
+					</c:forEach>
+				</select>
+			</li>
+			<li>
+				<label>전형 구분</label>
+				<select name="typeId">
+					<option>선택</option>
+					<c:forEach var="tl" items="${typeList}">
+						<option value="${tl.id}"<c:if test="${tl.value == rn.tValue}">selected</c:if>>${tl.value}</option>
 					</c:forEach>
 				</select>
 			</li>
 			<li>
 				<label>내용</label>
-				<textarea rows="20" cols="100" name="contents">${rnl.contents}</textarea>
+				<textarea rows="20" cols="100" name="contents">${rn.contents}</textarea>
 			</li>
 		</ul>
 		<input type="submit" value="저장" />

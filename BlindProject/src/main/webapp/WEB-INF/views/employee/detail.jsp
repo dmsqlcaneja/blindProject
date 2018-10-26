@@ -6,20 +6,21 @@
 	<section>
 		<div><!-- 제목 + 채용정보 -->
 			<div>
-				<h2>제목 : ${rnl.title}</h2>
-				<span>지원자수 : ?? 명</span>
+				<h2>제목 : ${rnd.title}</h2>
 			</div>
 			<div>
-				<p>모집 시작일 : <fmt:formatDate value="${rnl.strDate}" pattern="yyyy-MM-dd"/></p>
-				<p>모집 마감일 : <fmt:formatDate value="${rnl.endDate}" pattern="yyyy-MM-dd"/></p>
-				<p>채용구분 : ${rnl.recruitDivisionValue}</p>
+				<p>회사명: ${rnd.cName}</p>
+				<p>모집 시작일 : <fmt:formatDate value="${rnd.strDate}" pattern="yyyy-MM-dd"/></p>
+				<p>모집 마감일 : <fmt:formatDate value="${rnd.endDate}" pattern="yyyy-MM-dd"/></p>
+				<p>채용구분 : ${rnd.rdValue}</p>
+				<p>전형구분 : ${rnd.tValue}</p>
 			</div>
 		</div>
 		<div><!-- 내용 -->
-			<p>내용 : ${rnl.contents}</p>
+			<p>내용 : ${rnd.contents}</p>
 		</div>
 		<div>
-			<input type="button" value="수정" onclick="location.href='edit?id=${rnl.id}'"/>
+			<input type="button" value="수정" onclick="location.href='edit?id=${rnd.id}'"/>
 		</div>
 	</section>
 </main>

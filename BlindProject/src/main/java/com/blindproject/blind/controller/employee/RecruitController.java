@@ -18,30 +18,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.blindproject.blind.entity.Company;
 import com.blindproject.blind.entity.RecruitDivision;
 import com.blindproject.blind.entity.RecruitNotice;
-import com.blindproject.blind.service.RecruitNoticeService;
+import com.blindproject.blind.entity.Type;
+import com.blindproject.blind.service.EmployeeService;
 
 @Controller
 @RequestMapping("/employee/")
-public class HireController {
+public class RecruitController {
 
 	@Autowired
-	private RecruitNoticeService recruitNoticeService;
+	private EmployeeService employeeService;
 
 	// 채용공고 등록 페이지
-	@GetMapping("hire")
+	@GetMapping("recruit")
 	public String hire(Model model) {
 
-		List<Company> companyList = recruitNoticeService.getCompanyList();
+		List<Company> companyList = employeeService.getCompanyList();
 
-		List<RecruitDivision> recruitDivisionList = recruitNoticeService.getRecruitDivisionList();
+		List<RecruitDivision> recruitDivisionList = employeeService.getRecruitDivisionList();
+		
+		List<Type> typeList = employeeService.getTypeList();
 
 		model.addAttribute("companyList", companyList);
 		model.addAttribute("recruitDivisionList", recruitDivisionList);
+		model.addAttribute("typeList", typeList);
 
-		return "employee.hire";
+		return "employee.recruit";
 	}
 
-	@PostMapping("hire")
+	@PostMapping("recruit")
 	public String hire(HttpServletRequest request) throws ParseException {
 
 		RecruitNotice recruitNotice = new RecruitNotice();
@@ -58,8 +62,11 @@ public class HireController {
 
 		int cid = Integer.parseInt(request.getParameter("companyId"));
 		recruitNotice.setCompanyId(cid);
-
-		recruitNoticeService.insertRecruitNotice(recruitNotice);
+		
+		int tid = Integer.parseInt(request.getParameter("typeId"));
+		recruitNotice.setTypeId(tid);
+		
+		employeeService.insertRecruitNotice(recruitNotice);
 
 		return "redirect:index";
 	}
@@ -69,18 +76,21 @@ public class HireController {
 	public String edit(Model model, 
 			@RequestParam("id") int id) {
 
-		RecruitNotice notice = recruitNoticeService.getRecruitNotice(id);
+		RecruitNotice rn = employeeService.getRecruitNotice(id);
 
-		model.addAttribute("rnl", notice);
+		model.addAttribute("rn", rn);
 
-		List<Company> companyList = recruitNoticeService.getCompanyList();
+		List<Company> companyList = employeeService.getCompanyList();
 
 		model.addAttribute("companyList", companyList);
 
-		List<RecruitDivision> recruitDivisionList = recruitNoticeService.getRecruitDivisionList();
+		List<RecruitDivision> recruitDivisionList = employeeService.getRecruitDivisionList();
 
 		model.addAttribute("recruitDivisionList", recruitDivisionList);
-
+		
+		List<Type> typeList = employeeService.getTypeList();
+		model.addAttribute("typeList", typeList);
+		
 		return "employee.edit";
 	}
 
@@ -88,7 +98,7 @@ public class HireController {
 	public String edit(HttpServletRequest request, 
 			@RequestParam("id") int id) throws ParseException {
 
-		RecruitNotice recruitNotice = recruitNoticeService.getRecruitNotice(id);
+		RecruitNotice recruitNotice = employeeService.getRecruitNotice(id);
 		recruitNotice.setTitle(request.getParameter("title"));
 		recruitNotice.setContents(request.getParameter("contents"));
 
@@ -97,14 +107,17 @@ public class HireController {
 		recruitNotice.setStrDate(strDate);
 		recruitNotice.setEndDate(endDate);
 
-		Integer rdid = Integer.parseInt(request.getParameter("recruitDivisionId"));
+		int rdid = Integer.parseInt(request.getParameter("recruitDivisionId"));
 		recruitNotice.setRecruitDivisionId(rdid);
 
-		Integer cid = Integer.parseInt(request.getParameter("companyId"));
+		int cid = Integer.parseInt(request.getParameter("companyId"));
 		recruitNotice.setCompanyId(cid);
-
-		recruitNoticeService.updateRecruitNotice(recruitNotice);
-
+		
+		int tid = Integer.parseInt(request.getParameter("typeId"));
+		recruitNotice.setTypeId(tid);
+		
+		employeeService.updateRecruitNotice(recruitNotice);
+		
 		return "redirect:index";
 	}
 

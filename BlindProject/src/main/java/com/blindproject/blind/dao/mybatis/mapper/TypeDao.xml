@@ -6,14 +6,13 @@
   
 <mapper namespace="com.blindproject.blind.dao.TypeDao">
 	
-	<select id="get" resultType="com.blindproject.blind.entity.Type">
-		select * from type
+	<select id="getType" resultType="com.blindproject.blind.entity.Type">
+		select * from Type
 		where id = #{param1}
 	</select>
 	
-	<select id="getList" resultType="com.blindproject.blind.entity.Type">
-		select * from type
-<!-- 		where id = #{param1} -->
+	<select id="getTypeList" resultType="com.blindproject.blind.entity.Type">
+		select * from Type
 	</select>
 	
 </mapper>

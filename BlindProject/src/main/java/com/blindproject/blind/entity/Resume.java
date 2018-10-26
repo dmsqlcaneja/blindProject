@@ -31,7 +31,7 @@ public class Resume {
 	private String phoneNumber;
 
 	// 지원 아이디(지원하는 행위에 대한 아이디)
-	private int applyId;
+	private int applierId;
 
 	public int getId() {
 		return id;
@@ -105,12 +105,12 @@ public class Resume {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public int getApplyId() {
-		return applyId;
+	public int getApplierId() {
+		return applierId;
 	}
 
-	public void setApplyId(int applyId) {
-		this.applyId = applyId;
+	public void setApplierId(int applierId) {
+		this.applierId = applierId;
 	}
 
 	public Resume() {
@@ -118,7 +118,7 @@ public class Resume {
 	}
 
 	public Resume(int id, String growth, String motivation, String ambition, String personality, String freeScript,
-			String address, String emergencyNumber, String phoneNumber, int applyId) {
+			String address, String emergencyNumber, String phoneNumber, int applierId) {
 		super();
 		this.id = id;
 		this.growth = growth;
@@ -129,7 +129,7 @@ public class Resume {
 		this.address = address;
 		this.emergencyNumber = emergencyNumber;
 		this.phoneNumber = phoneNumber;
-		this.applyId = applyId;
+		this.applierId = applierId;
 	}
 
 }

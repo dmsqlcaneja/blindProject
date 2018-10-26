@@ -6,58 +6,42 @@
    
 	<!-- writerId는 회원가입 만들고 변경해줍시다... -->
 	<insert id="insertRecruitNotice" parameterType="com.blindproject.blind.entity.RecruitNotice">
-		insert into Recruit_Notice(title, contents, reg_date, writer_id, str_date, end_date, recruit_division_id, company_id)
-		values(#{title}, #{contents}, curdate(), 1, #{strDate}, #{endDate}, #{recruitDivisionId}, #{companyId});
+		INSERT into RecruitNotice(title, contents, regDate, strDate, endDate, recruitDivisionId, writerId, typeId, companyId)
+		VALUES(#{title}, #{contents}, now(), #{strDate}, #{endDate}, #{recruitDivisionId}, 1, #{typeId}, #{companyId})
 	</insert>
 	
 	<update id="updateRecruitNotice" parameterType="com.blindproject.blind.entity.RecruitNotice">
-		update Recruit_Notice
-		set title = #{title}, 
-			contents = #{contents}, 
-			writer_id = 1, 
-			str_date = #{strDate}, 
-			end_date = #{endDate}, 
-			recruit_division_id = #{recruitDivisionId}, 
-			company_id = #{companyId}
-		where id=#{id}
+		UPDATE RecruitNotice
+		SET title = #{title},
+			contents = #{contents},
+			strDate = #{strDate},
+		    endDate = #{endDate},
+		    recruitDivisionId = #{recruitDivisionId},
+		    typeId = #{typeId},
+		    companyId = #{companyId}
+		WHERE id = #{id}
 	</update>
 	
-	<select id="get" resultType="com.blindproject.blind.entity.RecruitNotice">
-		Select
-			rn.id,
-			rn.title,
-			rn.contents,
-			rn.reg_date as regDate,
-			rn.writer_id,
-			rn.str_date as strDate,
-			rn.end_date as endDate,
-			c.name as companyName,
-			rd.value as recruitDivisionValue
-		From Recruit_Notice rn 
-		left JOIN Company c
-		ON rn.company_id = c.id
-		left JOIN Recruit_Division rd
-		ON rn.recruit_division_id = rd.id
-		where rn.id = #{param1}
+	<select id="getRecruitNotice" resultType="com.blindproject.blind.entity.RecruitNotice">
+		SELECT
+			*
+		FROM rn_list 
+		WHERE id = #{param1}
 	</select>
 	
-	<select id="getList" resultType="com.blindproject.blind.entity.RecruitNotice">
-		Select
-			rn.id,
-			rn.title,
-			rn.contents,
-			rn.reg_date as regDate,
-			rn.writer_id,
-			rn.str_date as strDate,
-			rn.end_date as endDate,
-			c.name as companyName,
-			rd.value as recruitDivisionValue
-		From Recruit_Notice rn 
-		left JOIN Company c
-		ON rn.company_id = c.id
-		left JOIN Recruit_Division rd
-		ON rn.recruit_division_id = rd.id
-		ORDER BY rn.id desc;
+	<select id="getRecruitNoticeList" resultType="com.blindproject.blind.entity.RecruitNotice">
+		SELECT c.* from (select @ROWNUM := @ROWNUM + 1 AS rNum, a.id, a.cName, a.title, a.contents, a.strDate, a.endDate, a.rdValue, a.tValue, a.regDate, a.writerId
+			from (select * from rn_list WHERE title like '%테스트%' order by id asc) a, (SELECT @ROWNUM := 0) b
+		) c
+		WHERE c.rNum between 1 and 5
+		order by rNum desc
+		
+		<!-- 검색 적용할거 -->
+<!-- 		SELECT c.* from (select @ROWNUM := @ROWNUM + 1 AS rNum, a.id, a.cName, a.title, a.contents, a.strDate, a.endDate, a.rdValue, a.tValue, a.regDate, a.writerId -->
+<!-- 			from (select * from rn_list WHERE #{key} like '%#{value}%' order by id asc) a, (SELECT @ROWNUM := 0) b -->
+<!-- 		) c -->
+<!-- 		WHERE c.rNum between #{param1} and #{param2} -->
+<!-- 		order by rNum desc -->
 	</select>
 	
 

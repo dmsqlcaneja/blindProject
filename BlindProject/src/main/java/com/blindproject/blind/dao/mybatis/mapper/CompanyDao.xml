@@ -12,7 +12,6 @@
 	
 	<select id="getCompanyList" resultType="com.blindproject.blind.entity.Company">
 		select * from Company
-<!-- 		where id = #{param1} -->
 	</select>
 	
 </mapper>

@@ -10,25 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.blindproject.blind.dao.CompanyDao;
-import com.blindproject.blind.entity.Company;
 import com.blindproject.blind.entity.RecruitNotice;
-import com.blindproject.blind.service.RecruitNoticeService;
+import com.blindproject.blind.service.EmployeeService;
 
 @Controller("employeeController")
 @RequestMapping("/employee/")
 public class HomeController {
 
 	@Autowired
-	private CompanyDao companyDao;
-
-	@Autowired
-	private RecruitNoticeService recruitNoticeService;
+	private EmployeeService employeeService;
 
 	@GetMapping("index")
 	public String index(Model model) {
 
 		// 채용공고 가져오기
-		List<RecruitNotice> recruitNoticeList = recruitNoticeService.getRecruitNoticeList();
+		List<RecruitNotice> recruitNoticeList = employeeService.getRecruitNoticeList();
 
 		model.addAttribute("recruitNoticeList", recruitNoticeList);
 
@@ -39,9 +35,9 @@ public class HomeController {
 	@GetMapping("detail")
 	public String detail(Model model, @RequestParam("id") int id) {
 
-		RecruitNotice notice = recruitNoticeService.getRecruitNotice(id);
+		RecruitNotice recruitNoticeDetail = employeeService.getRecruitNotice(id);
 
-		model.addAttribute("rnl", notice);
+		model.addAttribute("rnd", recruitNoticeDetail);
 
 		return "employee.detail";
 	}

@@ -43,6 +43,16 @@
 				</select>
 			</li>
 			<li>
+				<!-- Type 테이블에서 가져오기 -->
+				<label>전형 구분</label>
+				<select name="typeId">
+					<option>선택</option>
+					<c:forEach var="t" items="${typeList}">
+						<option value="${t.id}">${t.value}</option>
+					</c:forEach>
+				</select>
+			</li>
+			<li>
 				<label>내용</label>
 				<textarea rows="20" cols="100" name="contents"></textarea>
 			</li>
