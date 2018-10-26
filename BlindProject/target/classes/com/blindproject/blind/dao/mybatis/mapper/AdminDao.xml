@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blindproject.blind.dao.EmployeeDao">
+	
+	<select id="getApplier" resultType="com.blindproject.blind.entity.Applier">
+		select * from Applier
+		where id = #{id}
+	</select>
+	
+	<insert id="insertApplier" parameterType="com.blindproject.blind.entity.Applier">
+ 		insert into Applier(loginId, pwd, email, name, roleName)
+		values(#{loginId}, #{pwd}, #{email}, #{name}, 'ROLE_EMPLOYEE')
+	</insert>	
+	
+</mapper>

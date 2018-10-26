@@ -1,5 +1,6 @@
 package com.blindproject.blind.dao.mybatis;
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,5 +29,6 @@ public class MybatisEmployeeDao implements EmployeeDao {
 		
 		return employeeDao.insertEmployee(employee);
 	}
+		
 
 }

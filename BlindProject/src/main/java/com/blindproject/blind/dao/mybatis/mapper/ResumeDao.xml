@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.blindproject.blind.dao.ResumeDao">
+	
+	<insert id="insertResume" parameterType="com.blindproject.blind.entity.Resume">
+		insert into Resume(growth, motivation, ambition, personality, freeScript, address, emergencyNumber, phoneNumber,applierId, applyId) 
+		VALUES(#{growth}, #{motivation}, #{ambition}, #{personality}, #{freeScript}, #{address}, #{emergencyNumber}, #{phoneNumber}, 1, #{applyId})
+
+		<!-- insert into Resume(growth, motivation, ambition, personality, freeScript, address, emergencyNumber, phoneNumber)
+		values(#{growth}, #{motivation}, #{ambition}, #{personality}, #{freeScript}, #{address}, #{emergencyNumber}, #{phoneNumber}, #{applierId}) -->
+	</insert>
+	
+	<select id="getId" parameterType="com.blindproject.blind.entity.Resume" resultType="Integer">
+		select id 
+		from Resume
+		where applierId = #{applierId}
+		and applyId = #{applyId}
+	</select>
+	
+</mapper>

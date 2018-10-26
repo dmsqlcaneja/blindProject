@@ -27,5 +27,6 @@
 		<beans:property name="definitions" value="/WEB-INF/tiles.xml" />
 	</beans:bean>
 	
+
 	
 </beans:beans>

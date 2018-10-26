@@ -50,11 +50,15 @@ public class Apply {
 	}
 
 	public Apply() {
-		super();
+	}
+	
+	// insert용 생성자
+	public Apply(int recruitNoticeId, int applierId) {
+		this.recruitNoticeId = recruitNoticeId;
+		this.applierId = applierId;
 	}
 
 	public Apply(int id, int recruitNoticeId, int applierId, Date applyDate) {
-		super();
 		this.id = id;
 		this.recruitNoticeId = recruitNoticeId;
 		this.applierId = applierId;

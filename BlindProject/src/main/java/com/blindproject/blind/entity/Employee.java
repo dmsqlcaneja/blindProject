@@ -26,6 +26,14 @@ public class Employee {
 
 	//권한
 	private String roleName;
+	
+	//비밀번호 일치 여부 체크
+		public boolean isCheckedPasswd(String pwd) {
+			if(pwd.equals(pwd)) {
+				return true;
+			}
+			return false;
+		}
 
 	public int getId() {
 		return id;
