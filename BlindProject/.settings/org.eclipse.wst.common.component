@@ -17,8 +17,7 @@
                 		
         
         <property name="java-output-path" value="target/classes"/>
-                
-        <property name="context-root" value="blindProject"/>
+        <property name="context-root" value="/"/>
                 	
     
     </wb-module>
